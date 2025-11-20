@@ -1,0 +1,74 @@
+spring:
+  main:
+    allow-circular-references: true
+
+  datasource:
+#    url: jdbc:oracle:thin:@10.113.10.113:1521:nileapi
+    url: jdbc:oracle:thin:@10.113.10.76:1521:grtwo
+    username: paygz #omnise paygz
+    password: paygz #oznbsal paygz
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+
+
+    hibernate:
+      ddl-auto: none
+      show-sql: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+  application:
+    name: payment
+  cache:
+    type: redis
+    redis:
+      cache-null-values: true
+server:
+  port: 8040
+
+timeout:
+  biller:
+    connection: 15 #sec
+    read: 1 #sec
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+#  spring.jpa.hibernate.ddl-auto=none
+#  spring.jpa.database-platform=org.hibernate.dialect.OracleDialect
+#  spring.datasource.hikari.jdbc-url=jdbc:oracle:thin:@10.113.10.76:1521:grtwo
+#  spring.datasource.hikari.username=paygz
+#  spring.datasource.hikari.password=paygz
+#  spring.datasource.hikari.driver-class-name=oracle.jdbc.OracleDriver
+#  spring.datasource.hikari.connection-timeout=30000
+#  spring.datasource.hikari.maximum-pool-size=10
+#  spring.datasource.hikari.minimum-idle=5
+#  spring.datasource.hikari.idle-timeout=600000
+#  spring.datasource.hikari.pool-name=payment-gateway
+  #
+
+#  spring.jpa.properties.hibernate.show_sql=true
+#
+#  spring.datasource.url=jdbc:oracle:thin:@10.113.10.76:1521:grtwo
+#  spring.datasource.username=system
+#  spring.datasource.password=password
+#  spring.datasource.driver.class-name=oracle.jdbc.OracleDriver

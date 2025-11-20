@@ -1,0 +1,316 @@
+2025-06-25 02:30:33 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 18524 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-06-25 02:30:33 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-06-25 02:30:33 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-25 02:30:44 [main] INFO  com.az.payment.PaymentApplication - Started PaymentApplication in 11.409 seconds (process running for 11.94)
+2025-06-25 02:30:55 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - inside PaymentService.processRequest
+2025-06-25 02:30:55 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest Getting service By ID 4 ,,,, and locale en
+2025-06-25 02:30:55 [http-nio-8040-exec-2] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 4
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest found Service Named Sudani TopUp: By Id 4
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - bankMapedResponse : PaymentResponse(responseParams=null, finalStatus=1, isPayment=false, requestParams=null, responseCode=0, responseMessage=null, bankReference=25062500255557)
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - reqRrn : 25 : Merchant_Ref : 25062500255557
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Validating request .... ProcessRequest(id=2, serviceId=4, parameters=[RequestParameter[id=22, key=mobile, value=0120155425], RequestParameter[id=24, key=amount, value=1], RequestParameter[id=25, key=Merchant_Ref, value=25062500255557]], accountFrom=0103093800000021)
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  com.az.payment.utils.Validation - Validating request
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  c.az.payment.service.ServiceService - ServiceService.findParameterByServiceId  ServiceID : 4
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 39 and true and true and true
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 40 and true and true and true
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 22 and true and false and true
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 24 and true and true and true
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 25 and false and true and true
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  com.az.payment.utils.Validation - Validating request parameters in request against actual parameters counts  2
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  com.az.payment.utils.Validation - Found 2 parameters in request ,,,against actual parameters counts  2
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  com.az.payment.utils.Validation - Validating parameter mobile ::: with value 0120155425
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  c.a.payment.service.ParameterService - ParameterService::findById  Find parameter by id 22
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  com.az.payment.utils.Validation - Validating parameter amount ::: with value 1
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  c.a.payment.service.ParameterService - ParameterService::findById  Find parameter by id 24
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  com.az.payment.utils.Validation - Validating parameter Merchant_Ref ::: with value 25062500255557
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  c.a.payment.service.ParameterService - ParameterService::findById  Find parameter by id 25
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  com.az.payment.utils.Validation - Validation::validateRequest After validating params against its definition 
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - end Validating request .... ProcessRequest(id=2, serviceId=4, parameters=[RequestParameter[id=22, key=mobile, value=0120155425], RequestParameter[id=24, key=amount, value=1], RequestParameter[id=25, key=Merchant_Ref, value=25062500255557]], accountFrom=0103093800000021)
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=2, serviceId=4, parameters=[RequestParameter[id=22, key=mobile, value=0120155425], RequestParameter[id=24, key=amount, value=1], RequestParameter[id=25, key=Merchant_Ref, value=25062500255557]], accountFrom=0103093800000021)
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - service : com.az.payment.domain.Service@43926bb1
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 39 and false and true and false
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 40 and false and true and false
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 22 and false and false and false
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 24 and false and true and false
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 25 and true and true and false
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - inside toJsonFIeld true
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"Merchant_Ref":"25062500255557","MDN":120155425,"transactionId":"38365820718300","Amount":1}
+2025-06-25 02:30:57 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest mapped  RequestDTO To JSON Object {"Merchant_Ref":"25062500255557","MDN":120155425,"transactionId":"38365820718300","Amount":1}
+2025-06-25 02:30:58 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - transactionLog.getId().toString() : 6302
+2025-06-25 02:31:00 [http-nio-8040-exec-2] ERROR com.az.payment.service.ClientApi - Biller not responding: I/O error on POST request for "http://localhost:9182/api/topup": Read timed out
+2025-06-25 02:31:00 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - {"code":-10,"message":"Biller not responding: I/O error on POST request for \"http://localhost:9182/api/topup\": Read timed out","status":-2}
+2025-06-25 02:31:01 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - #################### Response: Body
+2025-06-25 02:31:01 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - =================================-10
+2025-06-25 02:31:01 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - #################### TIME OUT
+2025-06-25 02:31:02 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - responseUnknown : PaymentResponse(responseParams=null, finalStatus=-2, isPayment=false, requestParams=null, responseCode=-10, responseMessage=Unkown from Biller, bankReference=null)
+2025-06-25 02:33:51 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 2332 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-06-25 02:33:51 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-06-25 02:33:51 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-25 02:34:02 [main] INFO  com.az.payment.PaymentApplication - Started PaymentApplication in 11.938 seconds (process running for 12.471)
+2025-06-25 02:34:23 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - inside PaymentService.processRequest
+2025-06-25 02:34:23 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest Getting service By ID 4 ,,,, and locale en
+2025-06-25 02:34:23 [http-nio-8040-exec-1] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 4
+2025-06-25 02:34:25 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest found Service Named Sudani TopUp: By Id 4
+2025-06-25 02:34:25 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - bankMapedResponse : PaymentResponse(responseParams=null, finalStatus=1, isPayment=false, requestParams=null, responseCode=0, responseMessage=null, bankReference=25062500223668)
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - reqRrn : 25 : Merchant_Ref : 25062500223668
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - start Validating request .... ProcessRequest(id=2, serviceId=4, parameters=[RequestParameter[id=22, key=mobile, value=0120155425], RequestParameter[id=24, key=amount, value=1], RequestParameter[id=25, key=Merchant_Ref, value=25062500223668]], accountFrom=0103093800000021)
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  com.az.payment.utils.Validation - Validating request
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  c.az.payment.service.ServiceService - ServiceService.findParameterByServiceId  ServiceID : 4
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 39 and true and true and true
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 40 and true and true and true
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 22 and true and false and true
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 24 and true and true and true
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 25 and false and true and true
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  com.az.payment.utils.Validation - Validating request parameters in request against actual parameters counts  2
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  com.az.payment.utils.Validation - Found 2 parameters in request ,,,against actual parameters counts  2
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  com.az.payment.utils.Validation - Validating parameter mobile ::: with value 0120155425
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  c.a.payment.service.ParameterService - ParameterService::findById  Find parameter by id 22
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  com.az.payment.utils.Validation - Validating parameter amount ::: with value 1
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  c.a.payment.service.ParameterService - ParameterService::findById  Find parameter by id 24
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  com.az.payment.utils.Validation - Validating parameter Merchant_Ref ::: with value 25062500223668
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  c.a.payment.service.ParameterService - ParameterService::findById  Find parameter by id 25
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  com.az.payment.utils.Validation - Validation::validateRequest After validating params against its definition 
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - end Validating request .... ProcessRequest(id=2, serviceId=4, parameters=[RequestParameter[id=22, key=mobile, value=0120155425], RequestParameter[id=24, key=amount, value=1], RequestParameter[id=25, key=Merchant_Ref, value=25062500223668]], accountFrom=0103093800000021)
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=2, serviceId=4, parameters=[RequestParameter[id=22, key=mobile, value=0120155425], RequestParameter[id=24, key=amount, value=1], RequestParameter[id=25, key=Merchant_Ref, value=25062500223668]], accountFrom=0103093800000021)
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - service : com.az.payment.domain.Service@798540ea
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 39 and false and true and false
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 40 and false and true and false
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 22 and false and false and false
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 24 and false and true and false
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 25 and true and true and false
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - inside toJsonFIeld true
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"Merchant_Ref":"25062500223668","MDN":120155425,"transactionId":"38573957036000","Amount":1}
+2025-06-25 02:34:26 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest mapped  RequestDTO To JSON Object {"Merchant_Ref":"25062500223668","MDN":120155425,"transactionId":"38573957036000","Amount":1}
+2025-06-25 02:34:27 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - transactionLog.getId().toString() : 6352
+2025-06-25 02:34:27 [http-nio-8040-exec-1] ERROR com.az.payment.service.ClientApi - Failed to access the Biller: I/O error on POST request for "http://localhost:9182/api/topup": Connection refused: no further information
+2025-06-25 02:34:27 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - {"code":-12,"message":"Failed to access the Biller: I/O error on POST request for \"http://localhost:9182/api/topup\": Connection refused: no further information","status":-1}
+2025-06-25 02:34:28 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - #################### Response: Body
+2025-06-25 02:34:28 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - =================================-12
+2025-06-25 02:34:28 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - Biller Failed:Start reverse process
+2025-06-25 02:34:28 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - mapResponseRev : PaymentResponse(responseParams=null, finalStatus=-1, isPayment=false, requestParams=null, responseCode=-2, responseMessage=Fail at Biller, bankReference=null)
+2025-06-25 03:18:04 [http-nio-8040-exec-5] INFO  c.az.payment.service.PaymentService - inside PaymentService.processRequest
+2025-06-25 03:18:04 [http-nio-8040-exec-5] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest Getting service By ID 4 ,,,, and locale en
+2025-06-25 03:18:04 [http-nio-8040-exec-5] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 4
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest found Service Named Sudani TopUp: By Id 4
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  c.az.payment.service.PaymentService - bankMapedResponse : PaymentResponse(responseParams=null, finalStatus=1, isPayment=false, requestParams=null, responseCode=0, responseMessage=null, bankReference=25062500204490)
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  com.az.payment.mapper.RequestMapper - reqRrn : 25 : Merchant_Ref : 25062500204490
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  com.az.payment.mapper.RequestMapper - start Validating request .... ProcessRequest(id=2, serviceId=4, parameters=[RequestParameter[id=22, key=mobile, value=0120155425], RequestParameter[id=24, key=amount, value=1], RequestParameter[id=25, key=Merchant_Ref, value=25062500204490]], accountFrom=0103093800000021)
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  com.az.payment.utils.Validation - Validating request
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  c.az.payment.service.ServiceService - ServiceService.findParameterByServiceId  ServiceID : 4
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 39 and true and true and true
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 40 and true and true and true
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 22 and true and false and true
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 24 and true and true and true
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 25 and false and true and true
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  com.az.payment.utils.Validation - Validating request parameters in request against actual parameters counts  2
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  com.az.payment.utils.Validation - Found 2 parameters in request ,,,against actual parameters counts  2
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  com.az.payment.utils.Validation - Validating parameter mobile ::: with value 0120155425
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  c.a.payment.service.ParameterService - ParameterService::findById  Find parameter by id 22
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  com.az.payment.utils.Validation - Validating parameter amount ::: with value 1
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  c.a.payment.service.ParameterService - ParameterService::findById  Find parameter by id 24
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  com.az.payment.utils.Validation - Validating parameter Merchant_Ref ::: with value 25062500204490
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  c.a.payment.service.ParameterService - ParameterService::findById  Find parameter by id 25
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  com.az.payment.utils.Validation - Validation::validateRequest After validating params against its definition 
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  com.az.payment.mapper.RequestMapper - end Validating request .... ProcessRequest(id=2, serviceId=4, parameters=[RequestParameter[id=22, key=mobile, value=0120155425], RequestParameter[id=24, key=amount, value=1], RequestParameter[id=25, key=Merchant_Ref, value=25062500204490]], accountFrom=0103093800000021)
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=2, serviceId=4, parameters=[RequestParameter[id=22, key=mobile, value=0120155425], RequestParameter[id=24, key=amount, value=1], RequestParameter[id=25, key=Merchant_Ref, value=25062500204490]], accountFrom=0103093800000021)
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  com.az.payment.mapper.RequestMapper - service : com.az.payment.domain.Service@23ea0b89
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 39 and false and true and false
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 40 and false and true and false
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 22 and false and false and false
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 24 and false and true and false
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 25 and true and true and false
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  com.az.payment.mapper.RequestMapper - inside toJsonFIeld true
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"Merchant_Ref":"25062500204490","MDN":120155425,"transactionId":"41194600315500","Amount":1}
+2025-06-25 03:18:06 [http-nio-8040-exec-5] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest mapped  RequestDTO To JSON Object {"Merchant_Ref":"25062500204490","MDN":120155425,"transactionId":"41194600315500","Amount":1}
+2025-06-25 03:18:07 [http-nio-8040-exec-5] INFO  c.az.payment.service.PaymentService - transactionLog.getId().toString() : 6353
+2025-06-25 03:18:08 [http-nio-8040-exec-5] ERROR com.az.payment.service.ClientApi - Biller not responding: I/O error on POST request for "http://localhost:9182/api/topup": Read timed out
+2025-06-25 03:18:08 [http-nio-8040-exec-5] INFO  c.az.payment.service.PaymentService - {"code":-10,"message":"Biller not responding: I/O error on POST request for \"http://localhost:9182/api/topup\": Read timed out","status":-2}
+2025-06-25 03:18:09 [http-nio-8040-exec-5] INFO  c.az.payment.service.PaymentService - #################### Response: Body
+2025-06-25 03:18:09 [http-nio-8040-exec-5] INFO  c.az.payment.service.PaymentService - =================================-10
+2025-06-25 03:18:09 [http-nio-8040-exec-5] INFO  c.az.payment.service.PaymentService - #################### TIME OUT
+2025-06-25 03:18:09 [http-nio-8040-exec-5] INFO  c.az.payment.service.PaymentService - responseUnknown : PaymentResponse(responseParams=null, finalStatus=-2, isPayment=false, requestParams=null, responseCode=-10, responseMessage=Unkown from Biller, bankReference=null)
+2025-06-25 03:41:25 [http-nio-8040-exec-8] INFO  c.az.payment.service.PaymentService - inside PaymentService.processRequest
+2025-06-25 03:41:25 [http-nio-8040-exec-8] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest Getting service By ID 4 ,,,, and locale en
+2025-06-25 03:41:25 [http-nio-8040-exec-8] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 4
+2025-06-25 03:41:26 [http-nio-8040-exec-8] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest found Service Named Sudani TopUp: By Id 4
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  c.az.payment.service.PaymentService - bankMapedResponse : PaymentResponse(responseParams=null, finalStatus=1, isPayment=false, requestParams=null, responseCode=0, responseMessage=null, bankReference=25062500225300)
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  com.az.payment.mapper.RequestMapper - reqRrn : 25 : Merchant_Ref : 25062500225300
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  com.az.payment.mapper.RequestMapper - start Validating request .... ProcessRequest(id=2, serviceId=4, parameters=[RequestParameter[id=22, key=mobile, value=0120155425], RequestParameter[id=24, key=amount, value=1], RequestParameter[id=25, key=Merchant_Ref, value=25062500225300]], accountFrom=0103093800000021)
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  com.az.payment.utils.Validation - Validating request
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  c.az.payment.service.ServiceService - ServiceService.findParameterByServiceId  ServiceID : 4
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 39 and true and true and true
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 40 and true and true and true
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 22 and true and false and true
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 24 and true and true and true
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 25 and false and true and true
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  com.az.payment.utils.Validation - Validating request parameters in request against actual parameters counts  2
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  com.az.payment.utils.Validation - Found 2 parameters in request ,,,against actual parameters counts  2
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  com.az.payment.utils.Validation - Validating parameter mobile ::: with value 0120155425
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  c.a.payment.service.ParameterService - ParameterService::findById  Find parameter by id 22
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  com.az.payment.utils.Validation - Validating parameter amount ::: with value 1
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  c.a.payment.service.ParameterService - ParameterService::findById  Find parameter by id 24
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  com.az.payment.utils.Validation - Validating parameter Merchant_Ref ::: with value 25062500225300
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  c.a.payment.service.ParameterService - ParameterService::findById  Find parameter by id 25
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  com.az.payment.utils.Validation - Validation::validateRequest After validating params against its definition 
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  com.az.payment.mapper.RequestMapper - end Validating request .... ProcessRequest(id=2, serviceId=4, parameters=[RequestParameter[id=22, key=mobile, value=0120155425], RequestParameter[id=24, key=amount, value=1], RequestParameter[id=25, key=Merchant_Ref, value=25062500225300]], accountFrom=0103093800000021)
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=2, serviceId=4, parameters=[RequestParameter[id=22, key=mobile, value=0120155425], RequestParameter[id=24, key=amount, value=1], RequestParameter[id=25, key=Merchant_Ref, value=25062500225300]], accountFrom=0103093800000021)
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  com.az.payment.mapper.RequestMapper - service : com.az.payment.domain.Service@12afd756
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 39 and false and true and false
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 40 and false and true and false
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 22 and false and false and false
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 24 and false and true and false
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 25 and true and true and false
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  com.az.payment.mapper.RequestMapper - inside toJsonFIeld true
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"Merchant_Ref":"25062500225300","MDN":120155425,"transactionId":"42595228824500","Amount":1}
+2025-06-25 03:41:27 [http-nio-8040-exec-8] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest mapped  RequestDTO To JSON Object {"Merchant_Ref":"25062500225300","MDN":120155425,"transactionId":"42595228824500","Amount":1}
+2025-06-25 03:41:28 [http-nio-8040-exec-8] INFO  c.az.payment.service.PaymentService - transactionLog.getId().toString() : 6354
+2025-06-25 03:41:28 [http-nio-8040-exec-8] ERROR com.az.payment.service.ClientApi - Failed to access the Biller: I/O error on POST request for "http://localhost:9182/api/topup": Connection refused: no further information
+2025-06-25 03:41:28 [http-nio-8040-exec-8] INFO  c.az.payment.service.PaymentService - {"code":-12,"message":"Failed to access the Biller: I/O error on POST request for \"http://localhost:9182/api/topup\": Connection refused: no further information","status":-1}
+2025-06-25 03:41:28 [http-nio-8040-exec-8] INFO  c.az.payment.service.PaymentService - #################### Response: Body
+2025-06-25 03:41:28 [http-nio-8040-exec-8] INFO  c.az.payment.service.PaymentService - =================================-12
+2025-06-25 03:41:28 [http-nio-8040-exec-8] INFO  c.az.payment.service.PaymentService - Biller Failed:Start reverse process
+2025-06-25 03:41:29 [http-nio-8040-exec-8] INFO  c.az.payment.service.PaymentService - mapResponseRev : PaymentResponse(responseParams=null, finalStatus=-1, isPayment=false, requestParams=null, responseCode=-2, responseMessage=Fail at Biller, bankReference=null)
+2025-06-25 03:48:08 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 11052 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-06-25 03:48:08 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-06-25 03:48:08 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-25 03:48:23 [main] INFO  com.az.payment.PaymentApplication - Started PaymentApplication in 15.766 seconds (process running for 16.342)
+2025-06-25 03:48:30 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - inside PaymentService.processRequest
+2025-06-25 03:48:30 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest Getting service By ID 4 ,,,, and locale en
+2025-06-25 03:48:30 [http-nio-8040-exec-1] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 4
+2025-06-25 03:48:32 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest found Service Named Sudani TopUp: By Id 4
+2025-06-25 03:48:32 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - bankMapedResponse : PaymentResponse(responseParams=null, finalStatus=1, isPayment=false, requestParams=null, responseCode=0, responseMessage=null, bankReference=25062500230617)
+2025-06-25 03:48:32 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - reqRrn : 25 : Merchant_Ref : 25062500230617
+2025-06-25 03:48:32 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - start Validating request .... ProcessRequest(id=2, serviceId=4, parameters=[RequestParameter[id=22, key=mobile, value=0120155425], RequestParameter[id=24, key=amount, value=1], RequestParameter[id=25, key=Merchant_Ref, value=25062500230617]], accountFrom=0103093800000021)
+2025-06-25 03:48:32 [http-nio-8040-exec-1] INFO  com.az.payment.utils.Validation - Validating request
+2025-06-25 03:48:32 [http-nio-8040-exec-1] INFO  c.az.payment.service.ServiceService - ServiceService.findParameterByServiceId  ServiceID : 4
+2025-06-25 03:48:32 [http-nio-8040-exec-1] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 39 and true and true and true
+2025-06-25 03:48:32 [http-nio-8040-exec-1] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 40 and true and true and true
+2025-06-25 03:48:32 [http-nio-8040-exec-1] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 22 and true and false and true
+2025-06-25 03:48:32 [http-nio-8040-exec-1] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 24 and true and true and true
+2025-06-25 03:48:32 [http-nio-8040-exec-1] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 25 and false and true and true
+2025-06-25 03:48:32 [http-nio-8040-exec-1] INFO  com.az.payment.utils.Validation - Validating request parameters in request against actual parameters counts  2
+2025-06-25 03:48:32 [http-nio-8040-exec-1] INFO  com.az.payment.utils.Validation - Found 2 parameters in request ,,,against actual parameters counts  2
+2025-06-25 03:48:32 [http-nio-8040-exec-1] INFO  com.az.payment.utils.Validation - Validating parameter mobile ::: with value 0120155425
+2025-06-25 03:48:32 [http-nio-8040-exec-1] INFO  c.a.payment.service.ParameterService - ParameterService::findById  Find parameter by id 22
+2025-06-25 03:48:32 [http-nio-8040-exec-1] INFO  com.az.payment.utils.Validation - Validating parameter amount ::: with value 1
+2025-06-25 03:48:32 [http-nio-8040-exec-1] INFO  c.a.payment.service.ParameterService - ParameterService::findById  Find parameter by id 24
+2025-06-25 03:48:32 [http-nio-8040-exec-1] INFO  com.az.payment.utils.Validation - Validating parameter Merchant_Ref ::: with value 25062500230617
+2025-06-25 03:48:32 [http-nio-8040-exec-1] INFO  c.a.payment.service.ParameterService - ParameterService::findById  Find parameter by id 25
+2025-06-25 03:48:33 [http-nio-8040-exec-1] INFO  com.az.payment.utils.Validation - Validation::validateRequest After validating params against its definition 
+2025-06-25 03:48:33 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - end Validating request .... ProcessRequest(id=2, serviceId=4, parameters=[RequestParameter[id=22, key=mobile, value=0120155425], RequestParameter[id=24, key=amount, value=1], RequestParameter[id=25, key=Merchant_Ref, value=25062500230617]], accountFrom=0103093800000021)
+2025-06-25 03:48:33 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=2, serviceId=4, parameters=[RequestParameter[id=22, key=mobile, value=0120155425], RequestParameter[id=24, key=amount, value=1], RequestParameter[id=25, key=Merchant_Ref, value=25062500230617]], accountFrom=0103093800000021)
+2025-06-25 03:48:33 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - service : com.az.payment.domain.Service@6b699181
+2025-06-25 03:48:33 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-06-25 03:48:33 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 39 and false and true and false
+2025-06-25 03:48:33 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 40 and false and true and false
+2025-06-25 03:48:33 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 22 and false and false and false
+2025-06-25 03:48:33 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 24 and false and true and false
+2025-06-25 03:48:33 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 25 and true and true and false
+2025-06-25 03:48:33 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - inside toJsonFIeld true
+2025-06-25 03:48:33 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"Merchant_Ref":"25062500230617","MDN":120155425,"transactionId":"43020955590300","Amount":1}
+2025-06-25 03:48:33 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest mapped  RequestDTO To JSON Object {"Merchant_Ref":"25062500230617","MDN":120155425,"transactionId":"43020955590300","Amount":1}
+2025-06-25 03:48:33 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - transactionLog.getId().toString() : 6402
+2025-06-25 03:48:34 [http-nio-8040-exec-1] ERROR com.az.payment.service.ClientApi - Failed to access the Biller: I/O error on POST request for "http://localhost:9182/api/topup": Connection refused: no further information
+2025-06-25 03:48:34 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - {"code":-12,"message":"Failed to access the Biller: I/O error on POST request for \"http://localhost:9182/api/topup\": Connection refused: no further information","status":-1}
+2025-06-25 03:48:34 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - #################### Response: Body
+2025-06-25 03:48:34 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - =================================-12
+2025-06-25 03:48:34 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - Biller Failed:Start reverse process
+2025-06-25 03:48:35 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - mapResponseRev : PaymentResponse(responseParams=null, finalStatus=-1, isPayment=false, requestParams=null, responseCode=-2, responseMessage=Fail at Biller, bankReference=null)
+2025-06-25 03:53:57 [http-nio-8040-exec-5] INFO  c.az.payment.service.PaymentService - inside PaymentService.processRequest
+2025-06-25 03:53:57 [http-nio-8040-exec-5] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest Getting service By ID 4 ,,,, and locale en
+2025-06-25 03:53:57 [http-nio-8040-exec-5] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 4
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest found Service Named Sudani TopUp: By Id 4
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  c.az.payment.service.PaymentService - bankMapedResponse : PaymentResponse(responseParams=null, finalStatus=1, isPayment=false, requestParams=null, responseCode=0, responseMessage=null, bankReference=25062500257000)
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  com.az.payment.mapper.RequestMapper - reqRrn : 25 : Merchant_Ref : 25062500257000
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  com.az.payment.mapper.RequestMapper - start Validating request .... ProcessRequest(id=2, serviceId=4, parameters=[RequestParameter[id=22, key=mobile, value=0120155425], RequestParameter[id=24, key=amount, value=1], RequestParameter[id=25, key=Merchant_Ref, value=25062500257000]], accountFrom=0103093800000021)
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  com.az.payment.utils.Validation - Validating request
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  c.az.payment.service.ServiceService - ServiceService.findParameterByServiceId  ServiceID : 4
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 39 and true and true and true
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 40 and true and true and true
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 22 and true and false and true
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 24 and true and true and true
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 25 and false and true and true
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  com.az.payment.utils.Validation - Validating request parameters in request against actual parameters counts  2
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  com.az.payment.utils.Validation - Found 2 parameters in request ,,,against actual parameters counts  2
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  com.az.payment.utils.Validation - Validating parameter mobile ::: with value 0120155425
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  c.a.payment.service.ParameterService - ParameterService::findById  Find parameter by id 22
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  com.az.payment.utils.Validation - Validating parameter amount ::: with value 1
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  c.a.payment.service.ParameterService - ParameterService::findById  Find parameter by id 24
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  com.az.payment.utils.Validation - Validating parameter Merchant_Ref ::: with value 25062500257000
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  c.a.payment.service.ParameterService - ParameterService::findById  Find parameter by id 25
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  com.az.payment.utils.Validation - Validation::validateRequest After validating params against its definition 
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  com.az.payment.mapper.RequestMapper - end Validating request .... ProcessRequest(id=2, serviceId=4, parameters=[RequestParameter[id=22, key=mobile, value=0120155425], RequestParameter[id=24, key=amount, value=1], RequestParameter[id=25, key=Merchant_Ref, value=25062500257000]], accountFrom=0103093800000021)
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=2, serviceId=4, parameters=[RequestParameter[id=22, key=mobile, value=0120155425], RequestParameter[id=24, key=amount, value=1], RequestParameter[id=25, key=Merchant_Ref, value=25062500257000]], accountFrom=0103093800000021)
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  com.az.payment.mapper.RequestMapper - service : com.az.payment.domain.Service@12afd756
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 39 and false and true and false
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 40 and false and true and false
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 22 and false and false and false
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 24 and false and true and false
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 25 and true and true and false
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  com.az.payment.mapper.RequestMapper - inside toJsonFIeld true
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"Merchant_Ref":"25062500257000","MDN":120155425,"transactionId":"43346903120400","Amount":1}
+2025-06-25 03:53:58 [http-nio-8040-exec-5] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest mapped  RequestDTO To JSON Object {"Merchant_Ref":"25062500257000","MDN":120155425,"transactionId":"43346903120400","Amount":1}
+2025-06-25 03:53:59 [http-nio-8040-exec-5] INFO  c.az.payment.service.PaymentService - transactionLog.getId().toString() : 6403
+2025-06-25 03:54:00 [http-nio-8040-exec-5] INFO  com.az.payment.service.ClientApi - ClientAPi::CallService response: {"receiptNo":null,"responseMessage":null,"msisdn":null,"transactionID":null,"responseCode":0,"amount":null,"mobileNumber":null,"ersReference":null,"rcode":"-1","rdesc_ar":"تمت العملية بنجاح","mdn":"120155425","rdesc_en":"Operation Completed Successfully.","RCode":"-1","RDesc_en":"Operation Completed Successfully.","RDesc_ar":"تمت العملية بنجاح","MDN":"120155425"}
+2025-06-25 03:54:00 [http-nio-8040-exec-5] INFO  c.az.payment.service.PaymentService - {"RDesc_en":"Operation Completed Successfully.","amount":null,"mobileNumber":null,"RDesc_ar":"تمت العملية بنجاح","rcode":"-1","transactionID":null,"responseCode":0,"rdesc_en":"Operation Completed Successfully.","mdn":"120155425","MDN":"120155425","receiptNo":null,"responseMessage":null,"msisdn":null,"ersReference":null,"rdesc_ar":"تمت العملية بنجاح","RCode":"-1"}
+2025-06-25 03:54:01 [http-nio-8040-exec-5] INFO  c.az.payment.service.PaymentService - #################### Response: Body
+2025-06-25 03:54:01 [http-nio-8040-exec-5] INFO  c.az.payment.service.PaymentService - #################### billerResCode:-1
+2025-06-25 03:54:01 [http-nio-8040-exec-5] INFO  c.az.payment.service.PaymentService - Biller Failed:Start reverse process
+2025-06-25 03:54:02 [http-nio-8040-exec-5] INFO  c.az.payment.service.PaymentService - mapResponseRev : PaymentResponse(responseParams=null, finalStatus=-1, isPayment=false, requestParams=null, responseCode=-2, responseMessage=Fail at Biller, bankReference=null)
+2025-06-25 04:01:49 [http-nio-8040-exec-8] INFO  c.az.payment.service.PaymentService - inside PaymentService.processRequest
+2025-06-25 04:01:49 [http-nio-8040-exec-8] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest Getting service By ID 4 ,,,, and locale en
+2025-06-25 04:01:49 [http-nio-8040-exec-8] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 4
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest found Service Named Sudani TopUp: By Id 4
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  c.az.payment.service.PaymentService - bankMapedResponse : PaymentResponse(responseParams=null, finalStatus=1, isPayment=false, requestParams=null, responseCode=0, responseMessage=null, bankReference=25062500249837)
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  com.az.payment.mapper.RequestMapper - reqRrn : 25 : Merchant_Ref : 25062500249837
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  com.az.payment.mapper.RequestMapper - start Validating request .... ProcessRequest(id=2, serviceId=4, parameters=[RequestParameter[id=22, key=mobile, value=0120155425], RequestParameter[id=24, key=amount, value=1], RequestParameter[id=25, key=Merchant_Ref, value=25062500249837]], accountFrom=0103093800000021)
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  com.az.payment.utils.Validation - Validating request
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  c.az.payment.service.ServiceService - ServiceService.findParameterByServiceId  ServiceID : 4
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 39 and true and true and true
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 40 and true and true and true
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 22 and true and false and true
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 24 and true and true and true
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  c.az.payment.service.ServiceService - inside stream getting parameterId 25 and false and true and true
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  com.az.payment.utils.Validation - Validating request parameters in request against actual parameters counts  2
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  com.az.payment.utils.Validation - Found 2 parameters in request ,,,against actual parameters counts  2
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  com.az.payment.utils.Validation - Validating parameter mobile ::: with value 0120155425
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  c.a.payment.service.ParameterService - ParameterService::findById  Find parameter by id 22
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  com.az.payment.utils.Validation - Validating parameter amount ::: with value 1
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  c.a.payment.service.ParameterService - ParameterService::findById  Find parameter by id 24
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  com.az.payment.utils.Validation - Validating parameter Merchant_Ref ::: with value 25062500249837
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  c.a.payment.service.ParameterService - ParameterService::findById  Find parameter by id 25
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  com.az.payment.utils.Validation - Validation::validateRequest After validating params against its definition 
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  com.az.payment.mapper.RequestMapper - end Validating request .... ProcessRequest(id=2, serviceId=4, parameters=[RequestParameter[id=22, key=mobile, value=0120155425], RequestParameter[id=24, key=amount, value=1], RequestParameter[id=25, key=Merchant_Ref, value=25062500249837]], accountFrom=0103093800000021)
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=2, serviceId=4, parameters=[RequestParameter[id=22, key=mobile, value=0120155425], RequestParameter[id=24, key=amount, value=1], RequestParameter[id=25, key=Merchant_Ref, value=25062500249837]], accountFrom=0103093800000021)
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  com.az.payment.mapper.RequestMapper - service : com.az.payment.domain.Service@530d242e
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 39 and false and true and false
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 40 and false and true and false
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 22 and false and false and false
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 24 and false and true and false
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  com.az.payment.mapper.RequestMapper - inside stream getting parameterId 25 and true and true and false
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  com.az.payment.mapper.RequestMapper - inside toJsonFIeld true
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"Merchant_Ref":"25062500249837","MDN":120155425,"transactionId":"43819808563800","Amount":1}
+2025-06-25 04:01:51 [http-nio-8040-exec-8] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest mapped  RequestDTO To JSON Object {"Merchant_Ref":"25062500249837","MDN":120155425,"transactionId":"43819808563800","Amount":1}
+2025-06-25 04:01:52 [http-nio-8040-exec-8] INFO  c.az.payment.service.PaymentService - transactionLog.getId().toString() : 6404
+2025-06-25 04:01:53 [http-nio-8040-exec-8] INFO  com.az.payment.service.ClientApi - ClientAPi::CallService response: {"receiptNo":null,"responseMessage":null,"msisdn":null,"transactionID":null,"responseCode":0,"amount":null,"mobileNumber":null,"ersReference":null,"rdesc_en":"Operation Completed Successfully.","mdn":"120155425","rcode":"0","rdesc_ar":"تمت العملية بنجاح","RCode":"0","RDesc_en":"Operation Completed Successfully.","RDesc_ar":"تمت العملية بنجاح","MDN":"120155425"}
+2025-06-25 04:01:53 [http-nio-8040-exec-8] INFO  c.az.payment.service.PaymentService - {"RDesc_en":"Operation Completed Successfully.","amount":null,"mobileNumber":null,"RDesc_ar":"تمت العملية بنجاح","rcode":"0","transactionID":null,"responseCode":0,"rdesc_en":"Operation Completed Successfully.","mdn":"120155425","MDN":"120155425","receiptNo":null,"responseMessage":null,"msisdn":null,"ersReference":null,"rdesc_ar":"تمت العملية بنجاح","RCode":"0"}
+2025-06-25 04:01:54 [http-nio-8040-exec-8] INFO  c.az.payment.service.PaymentService - #################### Response: Body
+2025-06-25 04:01:54 [http-nio-8040-exec-8] INFO  c.az.payment.service.PaymentService - #################### billerResCode:0
+2025-06-25 04:01:54 [http-nio-8040-exec-8] INFO  c.az.payment.service.PaymentService - #################### SUCCESS
+2025-06-25 04:01:55 [http-nio-8040-exec-8] INFO  c.az.payment.service.PaymentService - PaymentService::processResponse  Response returned From restApi {"RDesc_en":"Operation Completed Successfully.","amount":null,"mobileNumber":null,"RDesc_ar":"تمت العملية بنجاح","rcode":"0","transactionID":null,"responseCode":0,"rdesc_en":"Operation Completed Successfully.","mdn":"120155425","MDN":"120155425","receiptNo":null,"responseMessage":null,"msisdn":null,"ersReference":null,"rdesc_ar":"تمت العملية بنجاح","RCode":"0"}
+2025-06-25 04:01:55 [http-nio-8040-exec-8] INFO  com.az.payment.utils.Validation - Validation::validateResponse Validating response  ,,, apiResponse = {"RDesc_en":"Operation Completed Successfully.","amount":null,"mobileNumber":null,"RDesc_ar":"تمت العملية بنجاح","rcode":"0","transactionID":null,"responseCode":0,"rdesc_en":"Operation Completed Successfully.","mdn":"120155425","MDN":"120155425","receiptNo":null,"responseMessage":null,"msisdn":null,"ersReference":null,"rdesc_ar":"تمت العملية بنجاح","RCode":"0"},,,, for service ID 4 , with name Sudani TopUp
+2025-06-25 04:01:55 [http-nio-8040-exec-8] INFO  c.az.payment.service.ServiceService - ServiceService.findResponseParameterByServiceId  ServiceID : 4
+2025-06-25 04:01:55 [http-nio-8040-exec-8] INFO  com.az.payment.utils.Validation - parameter in List is RCode,,,, first check false , second check false 
+2025-06-25 04:01:55 [http-nio-8040-exec-8] INFO  com.az.payment.utils.Validation - parameter in List is RDesc_en,,,, first check true , second check true 
+2025-06-25 04:01:55 [http-nio-8040-exec-8] INFO  com.az.payment.utils.Validation - parameter in List is MDN,,,, first check true , second check true 
+2025-06-25 04:01:55 [http-nio-8040-exec-8] INFO  com.az.payment.utils.Validation - response returned after mapping data is [PaymentResponseField[key=responseMessage, value=Operation Completed Successfully, displayName=Status, id=40], PaymentResponseField[key=mobile, value=120155425, displayName=Phone Number , id=22]] 
+2025-06-25 04:01:55 [http-nio-8040-exec-8] INFO  com.az.payment.mapper.RequestMapper - response returned from mapper and validated as defined  PaymentResponse(responseParams=[PaymentResponseField[key=responseMessage, value=Operation Completed Successfully, displayName=Status, id=40], PaymentResponseField[key=mobile, value=120155425, displayName=Phone Number , id=22]], finalStatus=0, isPayment=false, requestParams=null, responseCode=0, responseMessage=Operation Completed Successfully, bankReference=null)
+2025-06-25 04:01:55 [http-nio-8040-exec-8] INFO  c.az.payment.service.PaymentService - PaymentService::processResponse mapped from toServiceResponse PaymentResponse(responseParams=[PaymentResponseField[key=responseMessage, value=Operation Completed Successfully, displayName=Status, id=40], PaymentResponseField[key=mobile, value=120155425, displayName=Phone Number , id=22]], finalStatus=0, isPayment=false, requestParams=null, responseCode=0, responseMessage=Operation Completed Successfully, bankReference=null)
+2025-06-25 04:01:55 [http-nio-8040-exec-8] INFO  com.az.payment.mapper.RequestMapper - start toClientResponse .... PaymentResponse(responseParams=[PaymentResponseField[key=responseMessage, value=Operation Completed Successfully, displayName=Status, id=40], PaymentResponseField[key=mobile, value=120155425, displayName=Phone Number , id=22]], finalStatus=0, isPayment=false, requestParams=null, responseCode=0, responseMessage=Operation Completed Successfully, bankReference=null),,,,, with request ............ProcessRequest(id=2, serviceId=4, parameters=[RequestParameter[id=22, key=mobile, value=0120155425], RequestParameter[id=24, key=amount, value=1], RequestParameter[id=25, key=Merchant_Ref, value=25062500249837]], accountFrom=0103093800000021) 
+2025-06-25 04:01:55 [http-nio-8040-exec-8] INFO  c.az.payment.service.PaymentService - mapResponse --->: PaymentResponse(responseParams=[PaymentResponseField[key=responseMessage, value=Operation Completed Successfully, displayName=Status, id=40], PaymentResponseField[key=mobile, value=120155425, displayName=Phone Number , id=22]], finalStatus=0, isPayment=false, requestParams=null, responseCode=0, responseMessage=Operation Completed Successfully, bankReference=25062500249837)

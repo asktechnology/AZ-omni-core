@@ -1,0 +1,361 @@
+2025-08-27 19:22:21 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 28664 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-08-27 19:22:21 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-08-27 19:22:21 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-27 19:23:12 [main] INFO  com.az.payment.PaymentApplication - Started PaymentApplication in 52.305 seconds (process running for 52.902)
+2025-08-27 19:24:57 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - inside PaymentService.processRequest
+2025-08-27 19:24:57 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - mobile request : ProcessRequest(id=1, serviceId=1, parameters=[RequestParameter[id=3, key=amount, value=1.0], RequestParameter[id=4, key=To_BBAN, value=80111111112222]], accountFrom=0103093800043536)
+2025-08-27 19:25:06 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - transactionLog Id : 17952 : rrn(250827010010000001)
+2025-08-27 19:25:06 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest Getting service By ID 1 ,,,, and locale en
+2025-08-27 19:25:06 [http-nio-8040-exec-1] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 1
+2025-08-27 19:25:46 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest found Service Named EBS Transfer: By Id 1
+2025-08-27 19:25:46 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=1, parameters=[RequestParameter[id=3, key=amount, value=1.0], RequestParameter[id=4, key=To_BBAN, value=80111111112222]], accountFrom=0103093800043536)
+2025-08-27 19:25:57 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - reqRrn : 5 : transactionId : 250827010010000001
+2025-08-27 19:25:57 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 19:25:57 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - Lang : fixed
+2025-08-27 19:25:57 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"Lang":"1","To_BBAN":"80111111112222","transactionId":"250827010010000001","Amount":1}
+2025-08-27 19:25:57 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest mapped  RequestDTO To JSON Object {"Lang":"1","To_BBAN":"80111111112222","transactionId":"250827010010000001","Amount":1}
+2025-08-27 19:25:59 [http-nio-8040-exec-1] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 11
+2025-08-27 19:26:12 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=11, parameters=[RequestParameter[id=41, key=accountFrom, value=0103093800043536]], accountFrom=null)
+2025-08-27 19:26:12 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - reqRrn : -1 : transactionID : 250827010010000001
+2025-08-27 19:26:12 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 19:26:12 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"transactionID":"250827010010000001","accountNo":"0103093800043536"}
+2025-08-27 19:26:14 [http-nio-8040-exec-1] INFO  com.az.payment.service.ClientApi - ClientAPi::CallService response: {"ibanNo":"SD5208010036552501","accName":"ادارة الكلى وزارة الصحة ولاية الخرطوم","transactionID":"250827010010000001","responseCode":0,"responseMessage":"Success"}
+2025-08-27 19:26:14 [http-nio-8040-exec-1] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 11
+2025-08-27 19:26:14 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=11, parameters=[RequestParameter[id=41, key=accountFrom, value=0103093800043536]], accountFrom=null)
+2025-08-27 19:26:14 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - reqRrn : -1 : transactionID : 250827010010000001
+2025-08-27 19:26:14 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 19:26:14 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"transactionID":"250827010010000001","accountNo":"0103093800043536"}
+2025-08-27 19:26:15 [http-nio-8040-exec-1] ERROR com.az.payment.service.ClientApi - Biller not responding: I/O error on POST request for "http://10.113.10.61:9292/api/getAccountDetails": Read timed out
+2025-08-27 19:26:15 [http-nio-8040-exec-1] ERROR com.az.payment.utils.CommonUtils - Can't get data for parameter senderName : parameter not retrieved by the datasource(11)
+2025-08-27 19:26:15 [http-nio-8040-exec-1] ERROR c.az.payment.service.PaymentService - SYSTEM ERR: Fail
+2025-08-27 20:03:27 [http-nio-8040-exec-9] INFO  c.az.payment.service.PaymentService - inside PaymentService.processRequest
+2025-08-27 20:03:27 [http-nio-8040-exec-9] INFO  c.az.payment.service.PaymentService - mobile request : ProcessRequest(id=1, serviceId=1, parameters=[RequestParameter[id=3, key=amount, value=1.0], RequestParameter[id=4, key=To_BBAN, value=80111111112222]], accountFrom=0103093800043536)
+2025-08-27 20:03:27 [http-nio-8040-exec-9] INFO  c.az.payment.service.PaymentService - transactionLog Id : 17953 : rrn(250827010010000002)
+2025-08-27 20:03:27 [http-nio-8040-exec-9] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest Getting service By ID 1 ,,,, and locale en
+2025-08-27 20:03:27 [http-nio-8040-exec-9] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 1
+2025-08-27 20:03:31 [http-nio-8040-exec-9] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest found Service Named EBS Transfer: By Id 1
+2025-08-27 20:03:31 [http-nio-8040-exec-9] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=1, parameters=[RequestParameter[id=3, key=amount, value=1.0], RequestParameter[id=4, key=To_BBAN, value=80111111112222]], accountFrom=0103093800043536)
+2025-08-27 20:03:33 [http-nio-8040-exec-9] INFO  com.az.payment.mapper.RequestMapper - reqRrn : 5 : transactionId : 250827010010000002
+2025-08-27 20:03:33 [http-nio-8040-exec-9] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 20:03:33 [http-nio-8040-exec-9] INFO  com.az.payment.mapper.RequestMapper - Lang : fixed
+2025-08-27 20:03:33 [http-nio-8040-exec-9] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"Lang":"1","To_BBAN":"80111111112222","transactionId":"250827010010000002","Amount":1}
+2025-08-27 20:03:33 [http-nio-8040-exec-9] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest mapped  RequestDTO To JSON Object {"Lang":"1","To_BBAN":"80111111112222","transactionId":"250827010010000002","Amount":1}
+2025-08-27 20:03:33 [http-nio-8040-exec-9] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 11
+2025-08-27 20:03:34 [http-nio-8040-exec-9] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=11, parameters=[RequestParameter[id=41, key=accountFrom, value=0103093800043536]], accountFrom=null)
+2025-08-27 20:03:34 [http-nio-8040-exec-9] INFO  com.az.payment.mapper.RequestMapper - reqRrn : -1 : transactionID : 250827010010000002
+2025-08-27 20:03:34 [http-nio-8040-exec-9] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 20:03:34 [http-nio-8040-exec-9] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"transactionID":"250827010010000002","accountNo":"0103093800043536"}
+2025-08-27 20:03:34 [http-nio-8040-exec-9] INFO  com.az.payment.service.ClientApi - ClientAPi::CallService response: {"ibanNo":"SD5208010036552501","accName":"ادارة الكلى وزارة الصحة ولاية الخرطوم","transactionID":"250827010010000002","responseCode":0,"responseMessage":"Success"}
+2025-08-27 20:03:34 [http-nio-8040-exec-9] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 11
+2025-08-27 20:03:34 [http-nio-8040-exec-9] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=11, parameters=[RequestParameter[id=41, key=accountFrom, value=0103093800043536]], accountFrom=null)
+2025-08-27 20:03:35 [http-nio-8040-exec-9] INFO  com.az.payment.mapper.RequestMapper - reqRrn : -1 : transactionID : 250827010010000002
+2025-08-27 20:03:35 [http-nio-8040-exec-9] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 20:03:35 [http-nio-8040-exec-9] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"transactionID":"250827010010000002","accountNo":"0103093800043536"}
+2025-08-27 20:03:35 [http-nio-8040-exec-9] INFO  com.az.payment.service.ClientApi - ClientAPi::CallService response: {"ibanNo":"SD5208010036552501","accName":"ادارة الكلى وزارة الصحة ولاية الخرطوم","transactionID":"250827010010000002","responseCode":0,"responseMessage":"Success"}
+2025-08-27 20:03:35 [http-nio-8040-exec-9] INFO  c.az.payment.service.PaymentService - processing payment from account : 0103093800043536
+2025-08-27 20:03:36 [http-nio-8040-exec-9] INFO  c.az.payment.service.PaymentService - bankMapedResponse : PaymentResponse(responseParams=null, finalStatus=1, isPayment=false, requestParams=null, responseCode=0, responseMessage=null, bankReference=250827010010000002)
+2025-08-27 20:03:36 [http-nio-8040-exec-9] INFO  com.az.payment.service.ClientApi - ClientAPi::CallService response: {"responseCode":-33,"responseMessage":"Success","transactionId":"250827010010000002","Amount":1.0,"To_BBAN":"80111111112222","Tran_DateTime":"270825060336","NS_RRN":"25082701001000000236606"}
+2025-08-27 20:03:36 [http-nio-8040-exec-9] INFO  c.az.payment.service.PaymentService - {"Tran_DateTime":"270825060336","Amount":1,"responseMessage":"Success","NS_RRN":"25082701001000000236606","transactionId":"250827010010000002","To_BBAN":"80111111112222","responseCode":-33}
+2025-08-27 20:03:37 [http-nio-8040-exec-9] INFO  c.az.payment.service.PaymentService - #################### Biller Failed:Starting reverse process if the service isPayment
+2025-08-27 20:03:38 [http-nio-8040-exec-9] ERROR c.az.payment.service.PaymentService - SYSTEM ERR: response Code -33 from biller 1 does not have equivalent definition 
+2025-08-27 20:04:30 [http-nio-8040-exec-6] INFO  c.az.payment.service.PaymentService - inside PaymentService.processRequest
+2025-08-27 20:04:30 [http-nio-8040-exec-6] INFO  c.az.payment.service.PaymentService - mobile request : ProcessRequest(id=1, serviceId=1, parameters=[RequestParameter[id=3, key=amount, value=8000000], RequestParameter[id=4, key=To_BBAN, value=80111111112222]], accountFrom=0103093800043536)
+2025-08-27 20:04:30 [http-nio-8040-exec-6] INFO  c.az.payment.service.PaymentService - transactionLog Id : 17954 : rrn(250827010010000004)
+2025-08-27 20:04:30 [http-nio-8040-exec-6] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest Getting service By ID 1 ,,,, and locale en
+2025-08-27 20:04:30 [http-nio-8040-exec-6] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 1
+2025-08-27 20:04:35 [http-nio-8040-exec-6] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest found Service Named EBS Transfer: By Id 1
+2025-08-27 20:04:35 [http-nio-8040-exec-6] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=1, parameters=[RequestParameter[id=3, key=amount, value=8000000], RequestParameter[id=4, key=To_BBAN, value=80111111112222]], accountFrom=0103093800043536)
+2025-08-27 20:04:36 [http-nio-8040-exec-6] INFO  com.az.payment.mapper.RequestMapper - reqRrn : 5 : transactionId : 250827010010000004
+2025-08-27 20:04:36 [http-nio-8040-exec-6] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 20:04:36 [http-nio-8040-exec-6] INFO  com.az.payment.mapper.RequestMapper - Lang : fixed
+2025-08-27 20:04:36 [http-nio-8040-exec-6] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"Lang":"1","To_BBAN":"80111111112222","transactionId":"250827010010000004","Amount":8000000}
+2025-08-27 20:04:36 [http-nio-8040-exec-6] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest mapped  RequestDTO To JSON Object {"Lang":"1","To_BBAN":"80111111112222","transactionId":"250827010010000004","Amount":8000000}
+2025-08-27 20:04:36 [http-nio-8040-exec-6] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 11
+2025-08-27 20:04:37 [http-nio-8040-exec-6] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=11, parameters=[RequestParameter[id=41, key=accountFrom, value=0103093800043536]], accountFrom=null)
+2025-08-27 20:04:37 [http-nio-8040-exec-6] INFO  com.az.payment.mapper.RequestMapper - reqRrn : -1 : transactionID : 250827010010000004
+2025-08-27 20:04:37 [http-nio-8040-exec-6] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 20:04:37 [http-nio-8040-exec-6] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"transactionID":"250827010010000004","accountNo":"0103093800043536"}
+2025-08-27 20:04:38 [http-nio-8040-exec-6] INFO  com.az.payment.service.ClientApi - ClientAPi::CallService response: {"ibanNo":"SD5208010036552501","accName":"ادارة الكلى وزارة الصحة ولاية الخرطوم","transactionID":"250827010010000004","responseCode":0,"responseMessage":"Success"}
+2025-08-27 20:04:38 [http-nio-8040-exec-6] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 11
+2025-08-27 20:04:38 [http-nio-8040-exec-6] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=11, parameters=[RequestParameter[id=41, key=accountFrom, value=0103093800043536]], accountFrom=null)
+2025-08-27 20:04:38 [http-nio-8040-exec-6] INFO  com.az.payment.mapper.RequestMapper - reqRrn : -1 : transactionID : 250827010010000004
+2025-08-27 20:04:38 [http-nio-8040-exec-6] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 20:04:38 [http-nio-8040-exec-6] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"transactionID":"250827010010000004","accountNo":"0103093800043536"}
+2025-08-27 20:04:38 [http-nio-8040-exec-6] INFO  com.az.payment.service.ClientApi - ClientAPi::CallService response: {"ibanNo":"SD5208010036552501","accName":"ادارة الكلى وزارة الصحة ولاية الخرطوم","transactionID":"250827010010000004","responseCode":0,"responseMessage":"Success"}
+2025-08-27 20:04:38 [http-nio-8040-exec-6] INFO  c.az.payment.service.PaymentService - processing payment from account : 0103093800043536
+2025-08-27 20:04:39 [http-nio-8040-exec-6] INFO  c.az.payment.service.PaymentService - ERROR[payCoreBank]:10056:Transaction Amount Exceed Service Limit Per Tran:1,000,000.00:0:ORA-0000: normal, successful completion
+2025-08-27 20:04:39 [http-nio-8040-exec-6] INFO  c.az.payment.service.PaymentService - bankMapedResponse : PaymentResponse(responseParams=null, finalStatus=-1, isPayment=false, requestParams=null, responseCode=10056, responseMessage=rspMsg:Transaction Amount Exceed Service Limit Per Tran:1,000,000.00
+sql(0):ORA-0000: normal, successful completion, bankReference=null)
+2025-08-27 20:08:49 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 31800 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-08-27 20:08:49 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-08-27 20:08:49 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-27 20:09:00 [main] INFO  com.az.payment.PaymentApplication - Started PaymentApplication in 11.699 seconds (process running for 12.281)
+2025-08-27 20:09:06 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - inside PaymentService.processRequest
+2025-08-27 20:09:06 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - mobile request : ProcessRequest(id=1, serviceId=1, parameters=[RequestParameter[id=3, key=amount, value=8000000], RequestParameter[id=4, key=To_BBAN, value=80111111112222]], accountFrom=0103093800043536)
+2025-08-27 20:09:07 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - transactionLog Id : 18002 : rrn(250827010010000005)
+2025-08-27 20:09:07 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest Getting service By ID 1 ,,,, and locale en
+2025-08-27 20:09:07 [http-nio-8040-exec-2] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 1
+2025-08-27 20:09:11 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest found Service Named EBS Transfer: By Id 1
+2025-08-27 20:09:11 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=1, parameters=[RequestParameter[id=3, key=amount, value=8000000], RequestParameter[id=4, key=To_BBAN, value=80111111112222]], accountFrom=0103093800043536)
+2025-08-27 20:09:13 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - reqRrn : 5 : transactionId : 250827010010000005
+2025-08-27 20:09:13 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 20:09:13 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - Lang : fixed
+2025-08-27 20:09:13 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"Lang":"1","To_BBAN":"80111111112222","transactionId":"250827010010000005","Amount":8000000}
+2025-08-27 20:09:13 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest mapped  RequestDTO To JSON Object {"Lang":"1","To_BBAN":"80111111112222","transactionId":"250827010010000005","Amount":8000000}
+2025-08-27 20:09:13 [http-nio-8040-exec-2] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 11
+2025-08-27 20:09:14 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=11, parameters=[RequestParameter[id=41, key=accountFrom, value=0103093800043536]], accountFrom=null)
+2025-08-27 20:09:14 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - reqRrn : -1 : transactionID : 250827010010000005
+2025-08-27 20:09:14 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 20:09:14 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"transactionID":"250827010010000005","accountNo":"0103093800043536"}
+2025-08-27 20:09:15 [http-nio-8040-exec-2] INFO  com.az.payment.service.ClientApi - ClientAPi::CallService response: {"ibanNo":"SD5208010036552501","accName":"ادارة الكلى وزارة الصحة ولاية الخرطوم","transactionID":"250827010010000005","responseCode":0,"responseMessage":"Success"}
+2025-08-27 20:09:15 [http-nio-8040-exec-2] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 11
+2025-08-27 20:09:15 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=11, parameters=[RequestParameter[id=41, key=accountFrom, value=0103093800043536]], accountFrom=null)
+2025-08-27 20:09:15 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - reqRrn : -1 : transactionID : 250827010010000005
+2025-08-27 20:09:15 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 20:09:15 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"transactionID":"250827010010000005","accountNo":"0103093800043536"}
+2025-08-27 20:09:15 [http-nio-8040-exec-2] INFO  com.az.payment.service.ClientApi - ClientAPi::CallService response: {"ibanNo":"SD5208010036552501","accName":"ادارة الكلى وزارة الصحة ولاية الخرطوم","transactionID":"250827010010000005","responseCode":0,"responseMessage":"Success"}
+2025-08-27 20:09:15 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - processing payment from account : 0103093800043536
+2025-08-27 20:09:16 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - ERROR[payCoreBank]:10056:Transaction Amount Exceed Service Limit Per Tran:1,000,000.00:0:ORA-0000: normal, successful completion
+2025-08-27 20:09:16 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - bankMapedResponse : PaymentResponse(responseParams=null, finalStatus=-1, isPayment=false, requestParams=null, responseCode=10056, responseMessage=rspMsg:Transaction Amount Exceed Service Limit Per Tran:1,000,000.00
+sql(0):ORA-0000: normal, successful completion, bankReference=null)
+2025-08-27 20:09:16 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - bankMapedResponse.getFinalStatus()==-1 : true
+2025-08-27 20:11:34 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 24160 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-08-27 20:11:34 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-08-27 20:11:34 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-27 20:11:45 [main] INFO  com.az.payment.PaymentApplication - Started PaymentApplication in 12.099 seconds (process running for 12.621)
+2025-08-27 20:11:52 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - inside PaymentService.processRequest
+2025-08-27 20:11:52 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - mobile request : ProcessRequest(id=1, serviceId=1, parameters=[RequestParameter[id=3, key=amount, value=8000000], RequestParameter[id=4, key=To_BBAN, value=80111111112222]], accountFrom=0103093800043536)
+2025-08-27 20:11:52 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - transactionLog Id : 18052 : rrn(250827010010000006)
+2025-08-27 20:11:52 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest Getting service By ID 1 ,,,, and locale en
+2025-08-27 20:11:52 [http-nio-8040-exec-2] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 1
+2025-08-27 20:11:57 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest found Service Named EBS Transfer: By Id 1
+2025-08-27 20:11:57 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=1, parameters=[RequestParameter[id=3, key=amount, value=8000000], RequestParameter[id=4, key=To_BBAN, value=80111111112222]], accountFrom=0103093800043536)
+2025-08-27 20:11:58 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - reqRrn : 5 : transactionId : 250827010010000006
+2025-08-27 20:11:58 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 20:11:58 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - Lang : fixed
+2025-08-27 20:11:58 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"Lang":"1","To_BBAN":"80111111112222","transactionId":"250827010010000006","Amount":8000000}
+2025-08-27 20:11:58 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest mapped  RequestDTO To JSON Object {"Lang":"1","To_BBAN":"80111111112222","transactionId":"250827010010000006","Amount":8000000}
+2025-08-27 20:11:58 [http-nio-8040-exec-2] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 11
+2025-08-27 20:12:00 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=11, parameters=[RequestParameter[id=41, key=accountFrom, value=0103093800043536]], accountFrom=null)
+2025-08-27 20:12:00 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - reqRrn : -1 : transactionID : 250827010010000006
+2025-08-27 20:12:00 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 20:12:00 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"transactionID":"250827010010000006","accountNo":"0103093800043536"}
+2025-08-27 20:12:00 [http-nio-8040-exec-2] INFO  com.az.payment.service.ClientApi - ClientAPi::CallService response: {"ibanNo":"SD5208010036552501","accName":"ادارة الكلى وزارة الصحة ولاية الخرطوم","transactionID":"250827010010000006","responseCode":0,"responseMessage":"Success"}
+2025-08-27 20:12:00 [http-nio-8040-exec-2] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 11
+2025-08-27 20:12:00 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=11, parameters=[RequestParameter[id=41, key=accountFrom, value=0103093800043536]], accountFrom=null)
+2025-08-27 20:12:00 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - reqRrn : -1 : transactionID : 250827010010000006
+2025-08-27 20:12:00 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 20:12:00 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"transactionID":"250827010010000006","accountNo":"0103093800043536"}
+2025-08-27 20:12:00 [http-nio-8040-exec-2] INFO  com.az.payment.service.ClientApi - ClientAPi::CallService response: {"ibanNo":"SD5208010036552501","accName":"ادارة الكلى وزارة الصحة ولاية الخرطوم","transactionID":"250827010010000006","responseCode":0,"responseMessage":"Success"}
+2025-08-27 20:12:01 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - processing payment from account : 0103093800043536
+2025-08-27 20:12:01 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - ERROR[payCoreBank]:10056:Transaction Amount Exceed Service Limit Per Tran:1,000,000.00:0:ORA-0000: normal, successful completion
+2025-08-27 20:12:01 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - bankMapedResponse : PaymentResponse(responseParams=null, finalStatus=-1, isPayment=false, requestParams=null, responseCode=10056, responseMessage=rspMsg:Transaction Amount Exceed Service Limit Per Tran:1,000,000.00
+sql(0):ORA-0000: normal, successful completion, bankReference=null)
+2025-08-27 20:12:01 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - bankMapedResponse.getFinalStatus()==-1 : true
+2025-08-27 20:12:02 [http-nio-8040-exec-2] ERROR c.az.payment.service.PaymentService - SYSTEM ERR: response Code 10 from biller -1 does not have equivalent definition 
+2025-08-27 20:14:31 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 26996 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-08-27 20:14:31 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-08-27 20:14:31 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-27 20:14:44 [main] INFO  com.az.payment.PaymentApplication - Started PaymentApplication in 14.504 seconds (process running for 15.133)
+2025-08-27 20:15:06 [http-nio-8040-exec-4] INFO  c.az.payment.service.PaymentService - inside PaymentService.processRequest
+2025-08-27 20:15:06 [http-nio-8040-exec-4] INFO  c.az.payment.service.PaymentService - mobile request : ProcessRequest(id=1, serviceId=1, parameters=[RequestParameter[id=3, key=amount, value=8000000], RequestParameter[id=4, key=To_BBAN, value=80111111112222]], accountFrom=0103093800043536)
+2025-08-27 20:15:06 [http-nio-8040-exec-4] INFO  c.az.payment.service.PaymentService - transactionLog Id : 18102 : rrn(250827010010000007)
+2025-08-27 20:15:06 [http-nio-8040-exec-4] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest Getting service By ID 1 ,,,, and locale en
+2025-08-27 20:15:06 [http-nio-8040-exec-4] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 1
+2025-08-27 20:15:11 [http-nio-8040-exec-4] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest found Service Named EBS Transfer: By Id 1
+2025-08-27 20:15:11 [http-nio-8040-exec-4] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=1, parameters=[RequestParameter[id=3, key=amount, value=8000000], RequestParameter[id=4, key=To_BBAN, value=80111111112222]], accountFrom=0103093800043536)
+2025-08-27 20:15:13 [http-nio-8040-exec-4] INFO  com.az.payment.mapper.RequestMapper - reqRrn : 5 : transactionId : 250827010010000007
+2025-08-27 20:15:13 [http-nio-8040-exec-4] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 20:15:13 [http-nio-8040-exec-4] INFO  com.az.payment.mapper.RequestMapper - Lang : fixed
+2025-08-27 20:15:13 [http-nio-8040-exec-4] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"Lang":"1","To_BBAN":"80111111112222","transactionId":"250827010010000007","Amount":8000000}
+2025-08-27 20:15:13 [http-nio-8040-exec-4] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest mapped  RequestDTO To JSON Object {"Lang":"1","To_BBAN":"80111111112222","transactionId":"250827010010000007","Amount":8000000}
+2025-08-27 20:15:13 [http-nio-8040-exec-4] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 11
+2025-08-27 20:15:14 [http-nio-8040-exec-4] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=11, parameters=[RequestParameter[id=41, key=accountFrom, value=0103093800043536]], accountFrom=null)
+2025-08-27 20:15:14 [http-nio-8040-exec-4] INFO  com.az.payment.mapper.RequestMapper - reqRrn : -1 : transactionID : 250827010010000007
+2025-08-27 20:15:14 [http-nio-8040-exec-4] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 20:15:14 [http-nio-8040-exec-4] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"transactionID":"250827010010000007","accountNo":"0103093800043536"}
+2025-08-27 20:15:15 [http-nio-8040-exec-4] INFO  com.az.payment.service.ClientApi - ClientAPi::CallService response: {"ibanNo":"SD5208010036552501","accName":"ادارة الكلى وزارة الصحة ولاية الخرطوم","transactionID":"250827010010000007","responseCode":0,"responseMessage":"Success"}
+2025-08-27 20:15:15 [http-nio-8040-exec-4] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 11
+2025-08-27 20:15:15 [http-nio-8040-exec-4] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=11, parameters=[RequestParameter[id=41, key=accountFrom, value=0103093800043536]], accountFrom=null)
+2025-08-27 20:15:15 [http-nio-8040-exec-4] INFO  com.az.payment.mapper.RequestMapper - reqRrn : -1 : transactionID : 250827010010000007
+2025-08-27 20:15:15 [http-nio-8040-exec-4] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 20:15:15 [http-nio-8040-exec-4] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"transactionID":"250827010010000007","accountNo":"0103093800043536"}
+2025-08-27 20:15:15 [http-nio-8040-exec-4] INFO  com.az.payment.service.ClientApi - ClientAPi::CallService response: {"ibanNo":"SD5208010036552501","accName":"ادارة الكلى وزارة الصحة ولاية الخرطوم","transactionID":"250827010010000007","responseCode":0,"responseMessage":"Success"}
+2025-08-27 20:15:16 [http-nio-8040-exec-4] INFO  c.az.payment.service.PaymentService - processing payment from account : 0103093800043536
+2025-08-27 20:15:16 [http-nio-8040-exec-4] INFO  c.az.payment.service.PaymentService - ERROR[payCoreBank]:10056:Transaction Amount Exceed Service Limit Per Tran:1,000,000.00:0:ORA-0000: normal, successful completion
+2025-08-27 20:15:16 [http-nio-8040-exec-4] INFO  c.az.payment.service.PaymentService - bankMapedResponse : PaymentResponse(responseParams=null, finalStatus=-1, isPayment=false, requestParams=null, responseCode=10056, responseMessage=rspMsg:Transaction Amount Exceed Service Limit Per Tran:1,000,000.00
+sql(0):ORA-0000: normal, successful completion, bankReference=null)
+2025-08-27 20:15:16 [http-nio-8040-exec-4] INFO  c.az.payment.service.PaymentService - bankMapedResponse.getResponseCode() : 10056
+2025-08-27 20:15:16 [http-nio-8040-exec-4] ERROR c.az.payment.service.PaymentService - SYSTEM ERR: response Code 10 from biller -1 does not have equivalent definition 
+2025-08-27 20:18:04 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 19052 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-08-27 20:18:04 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-08-27 20:18:04 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-27 20:18:15 [main] INFO  com.az.payment.PaymentApplication - Started PaymentApplication in 11.707 seconds (process running for 12.292)
+2025-08-27 20:18:20 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - inside PaymentService.processRequest
+2025-08-27 20:18:21 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - mobile request : ProcessRequest(id=1, serviceId=1, parameters=[RequestParameter[id=3, key=amount, value=8000000], RequestParameter[id=4, key=To_BBAN, value=80111111112222]], accountFrom=0103093800043536)
+2025-08-27 20:18:21 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - transactionLog Id : 18152 : rrn(250827010010000008)
+2025-08-27 20:18:21 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest Getting service By ID 1 ,,,, and locale en
+2025-08-27 20:18:21 [http-nio-8040-exec-2] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 1
+2025-08-27 20:18:26 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest found Service Named EBS Transfer: By Id 1
+2025-08-27 20:18:26 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=1, parameters=[RequestParameter[id=3, key=amount, value=8000000], RequestParameter[id=4, key=To_BBAN, value=80111111112222]], accountFrom=0103093800043536)
+2025-08-27 20:18:27 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - reqRrn : 5 : transactionId : 250827010010000008
+2025-08-27 20:18:27 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 20:18:27 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - Lang : fixed
+2025-08-27 20:18:27 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"Lang":"1","To_BBAN":"80111111112222","transactionId":"250827010010000008","Amount":8000000}
+2025-08-27 20:18:27 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest mapped  RequestDTO To JSON Object {"Lang":"1","To_BBAN":"80111111112222","transactionId":"250827010010000008","Amount":8000000}
+2025-08-27 20:18:27 [http-nio-8040-exec-2] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 11
+2025-08-27 20:18:28 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=11, parameters=[RequestParameter[id=41, key=accountFrom, value=0103093800043536]], accountFrom=null)
+2025-08-27 20:18:28 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - reqRrn : -1 : transactionID : 250827010010000008
+2025-08-27 20:18:28 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 20:18:28 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"transactionID":"250827010010000008","accountNo":"0103093800043536"}
+2025-08-27 20:18:29 [http-nio-8040-exec-2] INFO  com.az.payment.service.ClientApi - ClientAPi::CallService response: {"ibanNo":"SD5208010036552501","accName":"ادارة الكلى وزارة الصحة ولاية الخرطوم","transactionID":"250827010010000008","responseCode":0,"responseMessage":"Success"}
+2025-08-27 20:18:29 [http-nio-8040-exec-2] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 11
+2025-08-27 20:18:29 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=11, parameters=[RequestParameter[id=41, key=accountFrom, value=0103093800043536]], accountFrom=null)
+2025-08-27 20:18:29 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - reqRrn : -1 : transactionID : 250827010010000008
+2025-08-27 20:18:29 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 20:18:29 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"transactionID":"250827010010000008","accountNo":"0103093800043536"}
+2025-08-27 20:18:29 [http-nio-8040-exec-2] INFO  com.az.payment.service.ClientApi - ClientAPi::CallService response: {"ibanNo":"SD5208010036552501","accName":"ادارة الكلى وزارة الصحة ولاية الخرطوم","transactionID":"250827010010000008","responseCode":0,"responseMessage":"Success"}
+2025-08-27 20:18:30 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - processing payment from account : 0103093800043536
+2025-08-27 20:18:30 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - ERROR[payCoreBank]:10056:Transaction Amount Exceed Service Limit Per Tran:1,000,000.00:0:ORA-0000: normal, successful completion
+2025-08-27 20:18:30 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - bankMapedResponse : PaymentResponse(responseParams=null, finalStatus=-1, isPayment=false, requestParams=null, responseCode=10056, responseMessage=rspMsg:Transaction Amount Exceed Service Limit Per Tran:1,000,000.00
+sql(0):ORA-0000: normal, successful completion, bankReference=null)
+2025-08-27 20:18:30 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - bankMapedResponse.getResponseCode() : 10056
+2025-08-27 20:18:30 [http-nio-8040-exec-2] ERROR c.az.payment.service.PaymentService - SYSTEM ERR: while mapping the msg: response Code 10 from biller -1 does not have equivalent definition 
+2025-08-27 20:19:51 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 4512 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-08-27 20:19:51 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-08-27 20:19:51 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-27 20:20:02 [main] INFO  com.az.payment.PaymentApplication - Started PaymentApplication in 11.501 seconds (process running for 12.03)
+2025-08-27 20:21:01 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 28728 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-08-27 20:21:01 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-08-27 20:21:01 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-27 20:21:12 [main] INFO  com.az.payment.PaymentApplication - Started PaymentApplication in 11.443 seconds (process running for 12.11)
+2025-08-27 20:21:22 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - inside PaymentService.processRequest
+2025-08-27 20:21:22 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - mobile request : ProcessRequest(id=1, serviceId=1, parameters=[RequestParameter[id=3, key=amount, value=8000000], RequestParameter[id=4, key=To_BBAN, value=80111111112222]], accountFrom=0103093800043536)
+2025-08-27 20:21:22 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - transactionLog Id : 18202 : rrn(250827010010000009)
+2025-08-27 20:21:22 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest Getting service By ID 1 ,,,, and locale en
+2025-08-27 20:21:22 [http-nio-8040-exec-2] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 1
+2025-08-27 20:21:27 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest found Service Named EBS Transfer: By Id 1
+2025-08-27 20:21:27 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=1, parameters=[RequestParameter[id=3, key=amount, value=8000000], RequestParameter[id=4, key=To_BBAN, value=80111111112222]], accountFrom=0103093800043536)
+2025-08-27 20:21:28 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - reqRrn : 5 : transactionId : 250827010010000009
+2025-08-27 20:21:28 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 20:21:28 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - Lang : fixed
+2025-08-27 20:21:28 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"Lang":"1","To_BBAN":"80111111112222","transactionId":"250827010010000009","Amount":8000000}
+2025-08-27 20:21:28 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest mapped  RequestDTO To JSON Object {"Lang":"1","To_BBAN":"80111111112222","transactionId":"250827010010000009","Amount":8000000}
+2025-08-27 20:21:28 [http-nio-8040-exec-2] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 11
+2025-08-27 20:21:30 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=11, parameters=[RequestParameter[id=41, key=accountFrom, value=0103093800043536]], accountFrom=null)
+2025-08-27 20:21:30 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - reqRrn : -1 : transactionID : 250827010010000009
+2025-08-27 20:21:30 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 20:21:30 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"transactionID":"250827010010000009","accountNo":"0103093800043536"}
+2025-08-27 20:21:30 [http-nio-8040-exec-2] INFO  com.az.payment.service.ClientApi - ClientAPi::CallService response: {"ibanNo":"SD5208010036552501","accName":"ادارة الكلى وزارة الصحة ولاية الخرطوم","transactionID":"250827010010000009","responseCode":0,"responseMessage":"Success"}
+2025-08-27 20:21:30 [http-nio-8040-exec-2] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 11
+2025-08-27 20:21:30 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=11, parameters=[RequestParameter[id=41, key=accountFrom, value=0103093800043536]], accountFrom=null)
+2025-08-27 20:21:30 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - reqRrn : -1 : transactionID : 250827010010000009
+2025-08-27 20:21:30 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 20:21:30 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"transactionID":"250827010010000009","accountNo":"0103093800043536"}
+2025-08-27 20:21:30 [http-nio-8040-exec-2] INFO  com.az.payment.service.ClientApi - ClientAPi::CallService response: {"ibanNo":"SD5208010036552501","accName":"ادارة الكلى وزارة الصحة ولاية الخرطوم","transactionID":"250827010010000009","responseCode":0,"responseMessage":"Success"}
+2025-08-27 20:21:31 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - processing payment from account : 0103093800043536
+2025-08-27 20:21:31 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - ERROR[payCoreBank]:10056:Transaction Amount Exceed Service Limit Per Tran:1,000,000.00:0:ORA-0000: normal, successful completion
+2025-08-27 20:21:31 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - bankMapedResponse : PaymentResponse(responseParams=null, finalStatus=-1, isPayment=false, requestParams=null, responseCode=10056, responseMessage=rspMsg:Transaction Amount Exceed Service Limit Per Tran:1,000,000.00
+sql(0):ORA-0000: normal, successful completion, bankReference=null)
+2025-08-27 20:21:31 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - bankMapedResponse.getResponseCode() : 10056
+2025-08-27 20:46:46 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 15028 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-08-27 20:46:46 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-08-27 20:46:46 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-27 20:46:57 [main] INFO  com.az.payment.PaymentApplication - Started PaymentApplication in 11.994 seconds (process running for 12.673)
+2025-08-27 21:09:52 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 16484 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-08-27 21:09:52 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-08-27 21:09:52 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-27 21:10:04 [main] INFO  com.az.payment.PaymentApplication - Started PaymentApplication in 12.084 seconds (process running for 12.668)
+2025-08-27 21:10:13 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - inside PaymentService.processRequest
+2025-08-27 21:10:13 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - mobile request : ProcessRequest(id=1, serviceId=1, parameters=[RequestParameter[id=3, key=amount, value=8000000], RequestParameter[id=4, key=To_BBAN, value=80111111112222]], accountFrom=0103093800043536)
+2025-08-27 21:10:14 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - transactionLog Id : 18252 : rrn(250827010010000010)
+2025-08-27 21:10:14 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest Getting service By ID 1 ,,,, and locale en
+2025-08-27 21:10:14 [http-nio-8040-exec-2] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 1
+2025-08-27 21:10:18 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest found Service Named EBS Transfer: By Id 1
+2025-08-27 21:10:18 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=1, parameters=[RequestParameter[id=3, key=amount, value=8000000], RequestParameter[id=4, key=To_BBAN, value=80111111112222]], accountFrom=0103093800043536)
+2025-08-27 21:10:20 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - reqRrn : 5 : transactionId : 250827010010000010
+2025-08-27 21:10:20 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 21:10:20 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - Lang : fixed
+2025-08-27 21:10:20 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"Lang":"1","To_BBAN":"80111111112222","transactionId":"250827010010000010","Amount":8000000}
+2025-08-27 21:10:20 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest mapped  RequestDTO To JSON Object {"Lang":"1","To_BBAN":"80111111112222","transactionId":"250827010010000010","Amount":8000000}
+2025-08-27 21:10:20 [http-nio-8040-exec-2] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 11
+2025-08-27 21:10:21 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=11, parameters=[RequestParameter[id=41, key=accountFrom, value=0103093800043536]], accountFrom=null)
+2025-08-27 21:10:21 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - reqRrn : -1 : transactionID : 250827010010000010
+2025-08-27 21:10:21 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 21:10:21 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"transactionID":"250827010010000010","accountNo":"0103093800043536"}
+2025-08-27 21:10:22 [http-nio-8040-exec-2] INFO  com.az.payment.service.ClientApi - ClientAPi::CallService response: {"ibanNo":"SD5208010036552501","accName":"ادارة الكلى وزارة الصحة ولاية الخرطوم","transactionID":"250827010010000010","responseCode":0,"responseMessage":"Success"}
+2025-08-27 21:10:22 [http-nio-8040-exec-2] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 11
+2025-08-27 21:10:22 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=11, parameters=[RequestParameter[id=41, key=accountFrom, value=0103093800043536]], accountFrom=null)
+2025-08-27 21:10:22 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - reqRrn : -1 : transactionID : 250827010010000010
+2025-08-27 21:10:22 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 21:10:22 [http-nio-8040-exec-2] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"transactionID":"250827010010000010","accountNo":"0103093800043536"}
+2025-08-27 21:10:22 [http-nio-8040-exec-2] INFO  com.az.payment.service.ClientApi - ClientAPi::CallService response: {"ibanNo":"SD5208010036552501","accName":"ادارة الكلى وزارة الصحة ولاية الخرطوم","transactionID":"250827010010000010","responseCode":0,"responseMessage":"Success"}
+2025-08-27 21:10:23 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - processing payment from account : 0103093800043536
+2025-08-27 21:10:23 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - ERROR[payCoreBank]:10056:Transaction Amount Exceed Service Limit Per Tran:1,000,000.00:0:ORA-0000: normal, successful completion
+2025-08-27 21:10:23 [http-nio-8040-exec-2] INFO  c.az.payment.service.PaymentService - bankMapedResponse : PaymentResponse(responseParams=null, finalStatus=-1, isPayment=false, requestParams=null, responseCode=10056, responseMessage=rspMsg:Transaction Amount Exceed Service Limit Per Tran:1,000,000.00
+sql(0):ORA-0000: normal, successful completion, bankReference=null)
+2025-08-27 21:13:14 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 24644 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-08-27 21:13:14 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-08-27 21:13:14 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-27 21:13:25 [main] INFO  com.az.payment.PaymentApplication - Started PaymentApplication in 11.568 seconds (process running for 12.1)
+2025-08-27 21:13:38 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - inside PaymentService.processRequest
+2025-08-27 21:13:38 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - mobile request : ProcessRequest(id=1, serviceId=1, parameters=[RequestParameter[id=3, key=amount, value=8000000], RequestParameter[id=4, key=To_BBAN, value=80111111112222]], accountFrom=0103093800043536)
+2025-08-27 21:13:38 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - transactionLog Id : 18302 : rrn(250827010010000011)
+2025-08-27 21:13:38 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest Getting service By ID 1 ,,,, and locale en
+2025-08-27 21:13:38 [http-nio-8040-exec-1] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 1
+2025-08-27 21:13:43 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest found Service Named EBS Transfer: By Id 1
+2025-08-27 21:13:43 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=1, parameters=[RequestParameter[id=3, key=amount, value=8000000], RequestParameter[id=4, key=To_BBAN, value=80111111112222]], accountFrom=0103093800043536)
+2025-08-27 21:13:45 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - reqRrn : 5 : transactionId : 250827010010000011
+2025-08-27 21:13:45 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 21:13:45 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - Lang : fixed
+2025-08-27 21:13:45 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"Lang":"1","To_BBAN":"80111111112222","transactionId":"250827010010000011","Amount":8000000}
+2025-08-27 21:13:45 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest mapped  RequestDTO To JSON Object {"Lang":"1","To_BBAN":"80111111112222","transactionId":"250827010010000011","Amount":8000000}
+2025-08-27 21:13:45 [http-nio-8040-exec-1] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 11
+2025-08-27 21:13:46 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=11, parameters=[RequestParameter[id=41, key=accountFrom, value=0103093800043536]], accountFrom=null)
+2025-08-27 21:13:46 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - reqRrn : -1 : transactionID : 250827010010000011
+2025-08-27 21:13:46 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 21:13:46 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"transactionID":"250827010010000011","accountNo":"0103093800043536"}
+2025-08-27 21:13:47 [http-nio-8040-exec-1] INFO  com.az.payment.service.ClientApi - ClientAPi::CallService response: {"ibanNo":"SD5208010036552501","accName":"ادارة الكلى وزارة الصحة ولاية الخرطوم","transactionID":"250827010010000011","responseCode":0,"responseMessage":"Success"}
+2025-08-27 21:13:47 [http-nio-8040-exec-1] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 11
+2025-08-27 21:13:47 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=11, parameters=[RequestParameter[id=41, key=accountFrom, value=0103093800043536]], accountFrom=null)
+2025-08-27 21:13:47 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - reqRrn : -1 : transactionID : 250827010010000011
+2025-08-27 21:13:47 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 21:13:47 [http-nio-8040-exec-1] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"transactionID":"250827010010000011","accountNo":"0103093800043536"}
+2025-08-27 21:13:47 [http-nio-8040-exec-1] INFO  com.az.payment.service.ClientApi - ClientAPi::CallService response: {"ibanNo":"SD5208010036552501","accName":"ادارة الكلى وزارة الصحة ولاية الخرطوم","transactionID":"250827010010000011","responseCode":0,"responseMessage":"Success"}
+2025-08-27 21:13:48 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - processing payment from account : 0103093800043536
+2025-08-27 21:13:48 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - ERROR[payCoreBank]:10056:Transaction Amount Exceed Service Limit Per Tran:1,000,000.00:0:ORA-0000: normal, successful completion
+2025-08-27 21:13:48 [http-nio-8040-exec-1] INFO  c.az.payment.service.PaymentService - bankMapedResponse : PaymentResponse(responseParams=null, finalStatus=-1, isPayment=false, requestParams=null, responseCode=10056, responseMessage=rspMsg:Transaction Amount Exceed Service Limit Per Tran:1,000,000.00
+sql(0):ORA-0000: normal, successful completion, bankReference=null)
+2025-08-27 21:58:52 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 20004 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-08-27 21:58:52 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-08-27 21:58:52 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-27 21:59:03 [main] INFO  com.az.payment.PaymentApplication - Started PaymentApplication in 11.831 seconds (process running for 12.386)
+2025-08-27 21:59:30 [http-nio-8040-exec-3] INFO  c.az.payment.service.PaymentService - inside PaymentService.processRequest
+2025-08-27 21:59:30 [http-nio-8040-exec-3] INFO  c.az.payment.service.PaymentService - mobile request : ProcessRequest(id=1, serviceId=1, parameters=[RequestParameter[id=3, key=amount, value=8000000], RequestParameter[id=4, key=To_BBAN, value=80111111112222]], accountFrom=0103093800043536)
+2025-08-27 21:59:31 [http-nio-8040-exec-3] INFO  c.az.payment.service.PaymentService - transactionLog Id : 18402 : rrn(250827010010000014)
+2025-08-27 21:59:31 [http-nio-8040-exec-3] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest Getting service By ID 1 ,,,, and locale en
+2025-08-27 21:59:31 [http-nio-8040-exec-3] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 1
+2025-08-27 21:59:36 [http-nio-8040-exec-3] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest found Service Named EBS Transfer: By Id 1
+2025-08-27 21:59:36 [http-nio-8040-exec-3] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=1, parameters=[RequestParameter[id=3, key=amount, value=8000000], RequestParameter[id=4, key=To_BBAN, value=80111111112222]], accountFrom=0103093800043536)
+2025-08-27 21:59:37 [http-nio-8040-exec-3] INFO  com.az.payment.mapper.RequestMapper - reqRrn : 5 : transactionId : 250827010010000014
+2025-08-27 21:59:37 [http-nio-8040-exec-3] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 21:59:37 [http-nio-8040-exec-3] INFO  com.az.payment.mapper.RequestMapper - Lang : fixed
+2025-08-27 21:59:37 [http-nio-8040-exec-3] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"Lang":"1","To_BBAN":"80111111112222","transactionId":"250827010010000014","Amount":8000000}
+2025-08-27 21:59:37 [http-nio-8040-exec-3] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest mapped  RequestDTO To JSON Object {"Lang":"1","To_BBAN":"80111111112222","transactionId":"250827010010000014","Amount":8000000}
+2025-08-27 21:59:37 [http-nio-8040-exec-3] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 11
+2025-08-27 21:59:39 [http-nio-8040-exec-3] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=11, parameters=[RequestParameter[id=41, key=accountFrom, value=0103093800043536]], accountFrom=null)
+2025-08-27 21:59:39 [http-nio-8040-exec-3] INFO  com.az.payment.mapper.RequestMapper - reqRrn : -1 : transactionID : 250827010010000014
+2025-08-27 21:59:39 [http-nio-8040-exec-3] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 21:59:39 [http-nio-8040-exec-3] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"transactionID":"250827010010000014","accountNo":"0103093800043536"}
+2025-08-27 21:59:39 [http-nio-8040-exec-3] INFO  com.az.payment.service.ClientApi - ClientAPi::CallService response: {"ibanNo":"SD5208010036552501","accName":"ادارة الكلى وزارة الصحة ولاية الخرطوم","transactionID":"250827010010000014","responseCode":0,"responseMessage":"Success"}
+2025-08-27 21:59:39 [http-nio-8040-exec-3] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 11
+2025-08-27 21:59:39 [http-nio-8040-exec-3] INFO  com.az.payment.mapper.RequestMapper - start Mapping Request .... ProcessRequest(id=1, serviceId=11, parameters=[RequestParameter[id=41, key=accountFrom, value=0103093800043536]], accountFrom=null)
+2025-08-27 21:59:39 [http-nio-8040-exec-3] INFO  com.az.payment.mapper.RequestMapper - reqRrn : -1 : transactionID : 250827010010000014
+2025-08-27 21:59:39 [http-nio-8040-exec-3] INFO  com.az.payment.mapper.RequestMapper - start Mapping Additional Request Data Such as fixed Value and transaction ID if available 
+2025-08-27 21:59:39 [http-nio-8040-exec-3] INFO  com.az.payment.mapper.RequestMapper - end Mapping Request .... {"transactionID":"250827010010000014","accountNo":"0103093800043536"}
+2025-08-27 21:59:39 [http-nio-8040-exec-3] INFO  com.az.payment.service.ClientApi - ClientAPi::CallService response: {"ibanNo":"SD5208010036552501","accName":"ادارة الكلى وزارة الصحة ولاية الخرطوم","transactionID":"250827010010000014","responseCode":0,"responseMessage":"Success"}
+2025-08-27 21:59:40 [http-nio-8040-exec-3] INFO  c.az.payment.service.PaymentService - processing payment from account : 0103093800043536
+2025-08-27 21:59:40 [http-nio-8040-exec-3] INFO  c.az.payment.service.PaymentService - ERROR[payCoreBank]:10056:Transaction Amount Exceed Service Limit Per Tran:1,000,000.00:0:ORA-0000: normal, successful completion
+2025-08-27 21:59:40 [http-nio-8040-exec-3] INFO  c.az.payment.service.PaymentService - bankMapedResponse : PaymentResponse(responseParams=null, finalStatus=-1, isPayment=false, requestParams=null, responseCode=10056, responseMessage=rspMsg:Transaction Amount Exceed Service Limit Per Tran:1,000,000.00
+sqlCode(0):ORA-0000: normal, successful completion, bankReference=null)
+2025-08-27 21:59:41 [http-nio-8040-exec-3] ERROR c.az.payment.service.PaymentService - SYSTEM ERR: while mapping the code: response Code 10056 from biller -1 does not have equivalent definition 

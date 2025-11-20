@@ -1,0 +1,61 @@
+2025-07-02 03:41:49 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 22708 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-07-02 03:41:49 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-07-02 03:41:49 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-02 03:43:39 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 20888 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-07-02 03:43:39 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-07-02 03:43:39 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-02 03:44:16 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 21808 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-07-02 03:44:16 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-07-02 03:44:16 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-02 04:52:23 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 19436 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-07-02 04:52:23 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-07-02 04:52:23 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-02 04:55:06 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 22084 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-07-02 04:55:06 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-07-02 04:55:06 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-02 04:56:26 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 16824 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-07-02 04:56:26 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-07-02 04:56:26 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-02 04:57:26 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 9376 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-07-02 04:57:26 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-07-02 04:57:26 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-02 04:59:33 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 16728 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-07-02 04:59:33 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-07-02 04:59:33 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-02 16:07:31 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 13092 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-07-02 16:07:31 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-07-02 16:07:31 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-02 16:08:32 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 17360 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-07-02 16:08:32 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-07-02 16:08:32 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-02 16:09:17 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 7476 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-07-02 16:09:17 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-07-02 16:09:17 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-02 16:09:28 [main] INFO  com.az.payment.PaymentApplication - Started PaymentApplication in 11.216 seconds (process running for 11.719)
+2025-07-02 19:07:13 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 27012 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-07-02 19:07:13 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-07-02 19:07:13 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-02 20:05:17 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 26232 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-07-02 20:05:17 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-07-02 20:05:17 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-02 20:09:06 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 26400 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-07-02 20:09:06 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-07-02 20:09:06 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-02 20:33:41 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 20896 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-07-02 20:33:41 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-07-02 20:33:41 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-02 21:01:20 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 23804 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-07-02 21:01:20 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-07-02 21:01:20 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-02 21:05:23 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 18632 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-07-02 21:05:23 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-07-02 21:05:23 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-02 21:31:21 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 27224 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-07-02 21:31:21 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-07-02 21:31:21 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-02 21:34:12 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 16404 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-07-02 21:34:12 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-07-02 21:34:12 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-02 21:35:16 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 29536 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-07-02 21:35:16 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-07-02 21:35:16 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"

@@ -1,0 +1,10 @@
+2025-07-27 00:11:10 [http-nio-8040-exec-7] INFO  c.az.payment.service.PaymentService - inside PaymentService.processRequest
+2025-07-27 00:11:10 [http-nio-8040-exec-7] INFO  c.az.payment.service.PaymentService - mobile request : ProcessRequest(id=1, serviceId=3, parameters=[RequestParameter[id=14, key=BBAN, value=0103093800000021], RequestParameter[id=15, key=iBBAN, value=0103093800000021]], accountFrom=0103093800000021)
+2025-07-27 00:11:10 [http-nio-8040-exec-7] INFO  c.az.payment.service.PaymentService - transactionLog Id : 13104 : rrn(250727010030000054)
+2025-07-27 00:11:10 [http-nio-8040-exec-7] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest Getting service By ID 3 ,,,, and locale en
+2025-07-27 00:11:10 [http-nio-8040-exec-7] INFO  c.az.payment.service.ServiceService - ServiceService.findById  return service with id 3
+2025-07-27 00:11:15 [http-nio-8040-exec-7] INFO  c.az.payment.service.PaymentService - PaymentService::processRequest found Service Named EBS Transfer: By Id 3
+2025-07-27 00:12:01 [main] INFO  com.az.payment.PaymentApplication - Starting PaymentApplication using Java 17.0.12 with PID 25340 (D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment\target\classes started by HP in D:\____WorkSpace\AZ\code backups\e-payment_5_5_2025\payment)
+2025-07-27 00:12:01 [main] DEBUG com.az.payment.PaymentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2025-07-27 00:12:01 [main] INFO  com.az.payment.PaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-27 00:12:15 [main] INFO  com.az.payment.PaymentApplication - Started PaymentApplication in 15.171 seconds (process running for 15.908)

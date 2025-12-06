@@ -13,6 +13,7 @@ import java.util.List;
 @Setter
 @Getter
 @Entity
+@ToString
 public class Service {
 
     @Id
@@ -26,7 +27,7 @@ public class Service {
     private String servicePath;
     private String imageUrl;
     @Enumerated(EnumType.ORDINAL)
-    private ServiceType serviceType; // [1=custom, 2=inq-pay, 3=pay, 4=data-source]
+    private ServiceType serviceType; // [0=custom, 1=inq-pay, 2=pay, 3=check-status, 4=data-source]
     // above key represents the service
 //    @org.hibernate.annotations.ColumnDefault("0l")
     private long beforeServiceId = 0;// if application should perform any request before this

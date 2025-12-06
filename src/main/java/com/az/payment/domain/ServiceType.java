@@ -5,5 +5,6 @@ public enum ServiceType {
     INQUIRY,
     PAYMENT,
     BOTH,
+    CHECKSTATUS,
     DATASOURCE
 }

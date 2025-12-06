@@ -165,7 +165,7 @@ public class CommonUtils {
         return null;
     }
 
-    public int mapResponseCode(long billerId, int externalResponseCode) {
+    public int mapResponseCode(long billerId, int externalResponseCode) {//TODO:ResponseCode should be passed as String like the table
         return Integer.parseInt(responseRepository.findByBillerIdAndExternalResponseCode(billerId, externalResponseCode + "")
                 .stream()
                 .findFirst()

@@ -1,7 +1,6 @@
 package com.az.payment.service;
 
 import com.az.payment.domain.*;
-import com.az.payment.exception.BusinessException;
 import com.az.payment.exception.ValidationException;
 import com.az.payment.mapper.RequestMapper;
 import com.az.payment.mapper.ResponseMapper;
@@ -15,7 +14,6 @@ import com.az.payment.response.PaymentResponse;
 import com.az.payment.response.PaymentResponseField;
 import com.az.payment.response.PostCheckResponse;
 import com.az.payment.utils.*;
-//import com.az.payment.domain.Service;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.persistence.ParameterMode;
@@ -27,12 +25,10 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static java.lang.String.format;
+import static com.az.payment.domain.ServiceType.CHECKSTATUS;
 
 @Service
 @Slf4j
@@ -452,7 +448,7 @@ public class PaymentService {
             log.info("ERROR[payCoreBank]:"+rspCode+":"+rspMsg+":"+errCode+":"+errMsg);
             mapResponse.setFinalStatus(-1);
             mapResponse.setResponseCode(Integer.parseInt(rspCode));
-            mapResponse.setResponseMessage("rspMsg:"+rspMsg+"\n"+"sqlCode("+errCode+"):"+errMsg);
+            mapResponse.setResponseMessage("rspMsg:"+rspMsg+"\n"+" sqlCode("+errCode+"):"+errMsg);
             return mapResponse;
         }
 
@@ -830,14 +826,14 @@ public class PaymentService {
 //
 //            }
 
-            if(checkService.getId()!=0){
+            if(checkService.getId()!=0 && checkService.getServiceType()==CHECKSTATUS){
 
                 List<RequestParameter> parameters = new ArrayList<>();
                 //fill request parameters
                 for (Parameter parameter: checkService.getParameters()) {
                     if(parameter.getParamType()==1 || parameter.getParamType()==3) {
 
-                        String key = parameter.getInternalKey();//internal[checkSer]=ext[orgnSer]
+                        String key = parameter.getInternalKey();//internal[checkServ]=ext[orgnServ]
                         String value = "";
                         JSONObject OrgRequest = new JSONObject(transactionLog.getRequest());
                         if(OrgRequest.has(key)){
@@ -870,10 +866,6 @@ public class PaymentService {
                 log.info("PaymentService::callService Getting service By ID {} ,,,, and locale {}", serviceId, locale);
                 var processService = service.findById(serviceId);
 
-                //check the biller code
-                if (billerId!=processService.id()){
-                    log.info("Biller({}) doesn't have service({})",billerId,processService.id());
-                }
                 // should get All configuration Parameters
                 // only if process Service got config data
                 // call request mapper to handle mapping requests
@@ -967,8 +959,8 @@ public class PaymentService {
 
                 //TODO: the "trnStatus" is hardcoded but should be configured in DB or config file
                 String trnStatusExKey = checkService.getParameters().stream().filter(parameter -> "trnStatus".equals(parameter.getInternalKey())).findFirst().get().getExternalKey();
-                Long trnStatus = response.has(trnStatusExKey)? Long.parseLong((String) response.get(trnStatusExKey)):null;
-                trnStatus = trnStatus == null?null:(trnStatus.longValue()==Long.parseLong(billerSuccessCode)?0L:(trnStatus.longValue()==Long.parseLong(billerTimeoutCode)?20L:10L));
+                String trnStatus = response.has(trnStatusExKey)? String.valueOf(response.get(trnStatusExKey)):null;
+                trnStatus = trnStatus == null?null:(trnStatus==billerSuccessCode?"0":(trnStatus==billerTimeoutCode?"20":"10"));
                 String trnStatusDiscExKey = checkService.getParameters().stream().filter(parameter -> "trnStatusDisc".equals(parameter.getInternalKey())).findFirst().get().getExternalKey();
                 String trnStatusDisc = response.has(trnStatusExKey)? (String) response.get(trnStatusDiscExKey):null;
 

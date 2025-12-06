@@ -62,7 +62,7 @@ public class RequestMapper {
                     //if the parameter is missing
                     if(!reqParIds.contains(parameter.getId())){
                         log.error("Parameter["+parameter.getInternalKey()+".id("+parameter.getId()+")] not found in request");
-                        throw new BusinessException("Invalid Request");
+                        //throw new BusinessException("Invalid Request");TODO:add feature "is_required" to the Parameter model
                     }
                 });
 

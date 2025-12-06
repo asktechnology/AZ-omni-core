@@ -20,7 +20,7 @@ public class CheckStatusResponse {
 
     private long responseCode;
     private String responseMessage;
-    private long trnStatus;
+    private String trnStatus;
     private String trnStatusDisc;
     private String transactionId;
     private String checkReqId;

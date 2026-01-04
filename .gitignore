@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### runtime generated ###
+logs/
+/logs
+/logs

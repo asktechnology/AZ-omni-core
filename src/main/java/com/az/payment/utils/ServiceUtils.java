@@ -132,7 +132,7 @@ public class ServiceUtils {
         return !(parameter.getDataSourceId()==-1);
     }
 
-    public Service getCheckStatusService(long serviceId){
+    public Service getNextService(long serviceId){
         Service service = new Service();
         System.out.println("serviceId : "+serviceId);
 

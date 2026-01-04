@@ -43,7 +43,7 @@ public class Parameter {
 
     private String regex;
 
-    private int inputType; // [1=inputText, 2=menu, 3=checkBox, 4=textArea, 5=radio]
+    private int inputType; // [1=inputText, 2=menu, 3=checkBox, 4=textArea, 5=radio, 6=shared]
 
     private int jsonType; // [1= primitive, 2= object {}, 3= array [0,1,2], 4= arrayOfObject [{},{}] ]
 

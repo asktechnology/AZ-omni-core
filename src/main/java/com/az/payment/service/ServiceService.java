@@ -100,7 +100,7 @@ public class ServiceService {
                 .stream().
                 filter(parameter -> {
 
-                    log.info("inside stream getting parameterId {} and {} and {} and {}",
+                    log.info("inside stream getting parameterId={} and !isGen={} and notBoth={} and !isFix={}",
                             parameter.getId(),
                             !parameter.isGeneratedTransactionId()
                             , (parameter.getParamType() == 1 || parameter.getParamType() == 2), parameter.getIsFixed() != 1

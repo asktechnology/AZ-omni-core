@@ -79,10 +79,8 @@ public class PaymentService {
             log.info("PaymentService::processRequest Getting service By ID {} ,,,, and locale {}", request.getServiceId(), locale);
             var processService = service.findById(request.getServiceId());
 
-            //check the biller code
-            if (request.getId()!=processService.id()){
-                log.info("Biller({}) doesn't have service({})",request.getId(),processService.id());
-            }
+            //TODO:check the biller code
+
             // should get All configuration Parameters
             // only if process Service got config data
             // call request mapper to handle mapping requests
@@ -761,7 +759,7 @@ public class PaymentService {
             }
 
             System.out.println("getCheckStatusService");
-            com.az.payment.domain.Service checkService = serviceUtils.getCheckStatusService(transactionLog.getServiceId());
+            com.az.payment.domain.Service checkService = serviceUtils.getNextService(transactionLog.getServiceId());
             System.out.println("after service : "+checkService);
 
             long billerId = transactionLog.getBillerId();
@@ -960,9 +958,14 @@ public class PaymentService {
                 //TODO: the "trnStatus" is hardcoded but should be configured in DB or config file
                 String trnStatusExKey = checkService.getParameters().stream().filter(parameter -> "trnStatus".equals(parameter.getInternalKey())).findFirst().get().getExternalKey();
                 String trnStatus = response.has(trnStatusExKey)? String.valueOf(response.get(trnStatusExKey)):null;
-                trnStatus = trnStatus == null?null:(trnStatus==billerSuccessCode?"0":(trnStatus==billerTimeoutCode?"20":"10"));
-                String trnStatusDiscExKey = checkService.getParameters().stream().filter(parameter -> "trnStatusDisc".equals(parameter.getInternalKey())).findFirst().get().getExternalKey();
-                String trnStatusDisc = response.has(trnStatusExKey)? (String) response.get(trnStatusDiscExKey):null;
+
+//                String trnStatusDiscExKey = checkService.getParameters().stream().filter(parameter -> "trnStatusDisc".equals(parameter.getInternalKey())).findFirst().get().getExternalKey();
+//                String trnStatusDisc = response.has(trnStatusExKey)? (String) response.get(trnStatusDiscExKey):null;
+
+                String trnStatusDisc = trnStatus == null?"":commonUtils.mapResponseMessage(transactionLog.getBillerId(), Integer.parseInt(trnStatus), locale);
+
+                trnStatus = trnStatus == null?null:String.valueOf(commonUtils.mapResponseCode(transactionLog.getBillerId(), Integer.parseInt(trnStatus)));
+//                trnStatus = trnStatus == null?null:(trnStatus.equals(billerSuccessCode)?"0":(trnStatus.equals(billerTimeoutCode)?"20":"10"));
 
                 //TODO: the returning codes 0,10,20 are hardcoded but should be configured in DB or config file
                 //if timeout(biller didn't response)

@@ -218,10 +218,11 @@ public class RequestMapper {
         // get service by Service ID
         var service = serviceRepository.findById(request.getServiceId());
         List<Long> ids = request.getParameters().stream().map(RequestParameter::id).toList();
+
         if (service.isEmpty())
             return response;
 
-        if(service.get().getServiceType() == ServiceType.BOTH)
+        if(service.get().getServiceType() == ServiceType.BOTH)//2
             if (service.get().getAfterServiceId() > 0) {
                 var nextServiceId = service.get().getAfterServiceId();
                 response.setFinalStatus(nextServiceId);

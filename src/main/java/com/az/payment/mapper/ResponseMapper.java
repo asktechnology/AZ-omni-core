@@ -24,7 +24,7 @@ public class ResponseMapper {
         // should validate successful response && prepare response from Mapping
         PaymentResponse response = validation.validateResponse(apiResponse, processService, billerId,locale);
         // should map response and generate new request Parameters if this service in  Query Stage
-        log.info("response returned from mapper and validated as defined  {}", response);
+        // log.info("response returned from mapper and validated as defined  {}", response);
         return response;
     }
 }

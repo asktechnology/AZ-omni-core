@@ -42,7 +42,7 @@ public class RequestMapper {
     private final ServiceUtils serviceUtils;
 
     public JSONObject toServiceRequest(ProcessRequest request, ServiceResponse processService, String omniRRN, String locale) {
-        log.info("start Mapping Request .... {}", request);
+        // log.info("start Mapping Request .... {}", request);
         // TODO :: change mapping to HASHMAP<STRING,OBJECT> as referred by Imam
         // should take the Json return from the Mapped function and then add additional Data
 
@@ -61,7 +61,7 @@ public class RequestMapper {
                 .forEach(parameter -> {
                     //if the parameter is missing
                     if(!reqParIds.contains(parameter.getId())){
-                        log.error("Parameter["+parameter.getInternalKey()+".id("+parameter.getId()+")] not found in request");
+                        // log.error("Parameter["+parameter.getInternalKey()+".id("+parameter.getId()+")] not found in request");
                         //throw new BusinessException("Invalid Request");TODO:add feature "is_required" to the Parameter model
                     }
                 });
@@ -71,7 +71,7 @@ public class RequestMapper {
         List<RequestParameter> requestFilteredParameters = request.getParameters().stream().filter(
                 parameter -> {
                     if (!serviceNonAdditionalInParametersIds.contains(parameter.id())){
-                        log.warn("found in request : not valid Parameter["+parameter.key()+".id("+parameter.id()+")] ");
+                        // log.warn("found in request : not valid Parameter["+parameter.key()+".id("+parameter.id()+")] ");
                         return false;
                     }
                     return true;
@@ -81,9 +81,9 @@ public class RequestMapper {
         //Set ReqRrn as 'service definition' or ['default one' even it's not required as 'service definition']
         Parameter reqRrnParameter = getReqRrnParameter(request.getServiceId());
         String reqRrnStr = reqRrnParameter.getReqrrnRegex().replaceAll("%RRN%", omniRRN);
-        log.info("reqRrn : "+reqRrnParameter.getId()+" : "+reqRrnParameter.getExternalKey()+" : "+reqRrnStr);
+        // log.info("reqRrn : "+reqRrnParameter.getId()+" : "+reqRrnParameter.getExternalKey()+" : "+reqRrnStr);
 
-        log.info("start Mapping Additional Request Data Such as fixed Value and transaction ID if available ");
+        // log.info("start Mapping Additional Request Data Such as fixed Value and transaction ID if available ");
         var additionalParams = serviceParameters.stream().
                 filter(
                         parameter -> {
@@ -92,7 +92,7 @@ public class RequestMapper {
                             boolean isFixed = parameter.getIsFixed() == 1;
                             if((parameter.getParamType() == 1 || parameter.getParamType() == 2) &&
                                     (isFixed || isGeneratedId)){
-                                log.info(parameter.getExternalKey() + " : " + (isGeneratedId?"GeneratedId":isFixed?"fixed":"other"));
+                                // log.info(parameter.getExternalKey() + " : " + (isGeneratedId?"GeneratedId":isFixed?"fixed":"other"));
                                 return true;
                             }
                             return false;
@@ -104,7 +104,7 @@ public class RequestMapper {
         HashMap<String, Object> params = toJsonField(requestFilteredParameters, serviceNonAdditionalInParameters);
         params.putAll(toJsonFieldFixedValues(additionalParams));
         params.put(reqRrnParameter.getExternalKey(), reqRrnStr);
-        log.info("end Mapping Request .... {}", new JSONObject(params));
+        // log.info("end Mapping Request .... {}", new JSONObject(params));
         return new JSONObject(params);
     }
 
@@ -123,7 +123,7 @@ public class RequestMapper {
             if (parameter.isEmpty())
                 throw new RuntimeException("Parameter not found");
             if (!(parameter.get().getParamType()==1 || parameter.get().getParamType()==3)){
-                log.info("Parameter |"+requestParameter.key()+"|id("+requestParameter.id()+")| is not IN parameter");
+                // log.info("Parameter |"+requestParameter.key()+"|id("+requestParameter.id()+")| is not IN parameter");
                 continue;
             }
 
@@ -139,7 +139,7 @@ public class RequestMapper {
             else if (parameterType == ParameterDataType.BOOLEAN)
                 params.put(externalKey, Boolean.parseBoolean(value));
             else if (parameterType == ParameterDataType.INT) {
-                log.info("inside toJsonFIeld {}", value.matches("[0-9.]+"));
+                // log.info("inside toJsonFIeld {}", value.matches("[0-9.]+"));
                 params.put(externalKey, Integer.parseInt(value));
             } else if (parameterType == ParameterDataType.DATE) {
                 try {
@@ -181,7 +181,7 @@ public class RequestMapper {
             else if (parameterType == ParameterDataType.BOOLEAN)
                 params.put(externalKey, Boolean.parseBoolean(value));
             else if (parameterType == ParameterDataType.INT) {
-                log.info("inside toJsonFIeld {}", value.matches("[0-9.]+"));
+                // log.info("inside toJsonFIeld {}", value.matches("[0-9.]+"));
                 params.put(externalKey, Integer.parseInt(value));
             } else if (parameterType == ParameterDataType.DATE) {
                 try {
@@ -214,7 +214,7 @@ public class RequestMapper {
 
     public PaymentResponse toClientResponse(PaymentResponse response, ProcessRequest request,String locale) {
 
-        log.info("start toClientResponse .... {},,,,, with request ............{} ", response, request);
+        // log.info("start toClientResponse .... {},,,,, with request ............{} ", response, request);
         // get service by Service ID
         var service = serviceRepository.findById(request.getServiceId());
         List<Long> ids = request.getParameters().stream().map(RequestParameter::id).toList();

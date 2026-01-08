@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(for file in src/main/java/com/az/payment/service/ServiceService.java src/main/java/com/az/payment/service/CategoryService.java src/main/java/com/az/payment/service/BillerService.java src/main/java/com/az/payment/service/ParameterService.java src/main/java/com/az/payment/mapper/RequestMapper.java src/main/java/com/az/payment/mapper/ResponseMapper.java src/main/java/com/az/payment/utils/Validation.java)",
+      "Bash(do sed -i 's/^\\\\\\(\\\\s*\\\\\\)log\\\\.\\\\\\(info\\\\|debug\\\\|error\\\\|warn\\\\\\)/\\\\1\\\\/\\\\/ log.\\\\2/g' \"$file\")",
+      "Bash(done)"
+    ]
+  }
+}

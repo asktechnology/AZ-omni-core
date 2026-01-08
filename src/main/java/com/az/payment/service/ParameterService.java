@@ -23,26 +23,26 @@ public class ParameterService {
     private final ParameterUtils helper;
 
     public List<ParameterResponse> findAll() {
-        log.info("ParameterService::findAll Find all parameters");
+        // log.info("ParameterService::findAll Find all parameters");
         return helper.findAll();//a.salah : moved to helper to avoid dependency loop
     }
 
     public ParameterResponse findById(long paramId) {
-        log.info("ParameterService::findById  Find parameter by id {}", paramId);
+        // log.info("ParameterService::findById  Find parameter by id {}", paramId);
         return helper.findById(paramId);//a.salah : moved to helper to avoid dependency loop
     }
 
     @Transactional
     public Long createParameter(CreateParameterRequest request) {
-        log.info("ParameterService::createParameter Create parameter {}", request);
+        // log.info("ParameterService::createParameter Create parameter {}", request);
         var parameter = mapper.toParameter(request);
-        log.info("ParameterService::createParameter mapping CreateParameterRequest :: {}   into  parameter {}", request, parameter);
+        // log.info("ParameterService::createParameter mapping CreateParameterRequest :: {}   into  parameter {}", request, parameter);
         return repository.save(parameter).getId();
     }
 
     @Transactional
     public Long deleteParameter(long paramId) {
-        log.info("ParameterService::deleteParameter Delete parameter by id {}", paramId);
+        // log.info("ParameterService::deleteParameter Delete parameter by id {}", paramId);
         var parameter = repository.findById(paramId).orElseThrow(() -> new EntityNotFoundException(String.format("Parameter with id %s not found", paramId)));
         repository.delete(parameter);
         return parameter.getId();
@@ -53,7 +53,7 @@ public class ParameterService {
     }
 
     public List<ParameterResponse> findParameterByServiceId(long serviceId) {
-        log.info("ParameterService::findParameterByServiceId Find parameter by service id {}", serviceId);
+        // log.info("ParameterService::findParameterByServiceId Find parameter by service id {}", serviceId);
 
 
         return null;

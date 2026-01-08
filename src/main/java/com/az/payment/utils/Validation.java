@@ -30,14 +30,14 @@ public class Validation {
     private final CommonUtils commonUtils;
 
     public void validateRequest(ProcessRequest request,String locale) {
-        log.info("Validating request");
+        // log.info("Validating request");
         int count = 0;
         boolean found = false;
         StringBuilder notFoundParams = new StringBuilder();
         // 1- first validate all required parameters are available
         var requestParameters = request.getParameters();
         var serviceParameters = service.findParameterByServiceId(request.getServiceId(),locale);
-        log.info("Validating request parameters in request against actual parameters counts  {}", serviceParameters.size());
+        // log.info("Validating request parameters in request against actual parameters counts  {}", serviceParameters.size());
         for (var serviceParameter : serviceParameters) {
             found = false;
             for (var requestParameter : requestParameters) {
@@ -50,10 +50,10 @@ public class Validation {
                 notFoundParams.append(format("request parameter %s with Id %d not found in request ", serviceParameter.name(), serviceParameter.id())).append(",,,");
             }
         }
-        log.info("Found {} parameters in request ,,,against actual parameters counts  {}", count, serviceParameters.size());
+        // log.info("Found {} parameters in request ,,,against actual parameters counts  {}", count, serviceParameters.size());
 
         if (count != serviceParameters.size()) {
-            log.info("Validation failed :: {}", notFoundParams.toString());
+            // log.info("Validation failed :: {}", notFoundParams.toString());
             throw new ValidationException(format("Validation failed for request %s ,,, request parameters not found ::: %s", request, notFoundParams.toString()));
         }
         // check parameters individually
@@ -62,12 +62,12 @@ public class Validation {
                 .map(this::validateParameter)
                 .toList();
         // should not reach here if params are not valid
-        log.info("Validation::validateRequest After validating params against its definition ");
+        // log.info("Validation::validateRequest After validating params against its definition ");
 
     }
 
     public Boolean validateParameter(RequestParameter requestParameter) {
-        log.info("Validating parameter {} ::: with value {}", requestParameter.key(), requestParameter.value());
+        // log.info("Validating parameter {} ::: with value {}", requestParameter.key(), requestParameter.value());
         var parameter = helper.findById(requestParameter.id());
         // check parameter length
         if (parameter.length() != -1 && (requestParameter.value().length() > parameter.length() || requestParameter.value().length() < parameter.length()))
@@ -83,8 +83,8 @@ public class Validation {
     }
 
     public PaymentResponse validateResponse(JSONObject apiResponse, ServiceResponse processService, long billerId,String locale) {
-        log.info("Validation::validateResponse Validating response  ,,, apiResponse = {},,,, for service ID {} , with name {}",
-                apiResponse, processService.id(), processService.name());
+        // log.info("Validation::validateResponse Validating response  ,,, apiResponse = {},,,, for service ID {} , with name {}",
+//                apiResponse, processService.id(), processService.name());
         StringBuilder notFoundInResponse = new StringBuilder();
         var parameters = service.findResponseParameterByServiceId(processService.id());
         PaymentResponse paymentResponse = new PaymentResponse();
@@ -95,7 +95,7 @@ public class Validation {
 
         /// should map response against parameters defined
         for (var responseParameter : parameters) {
-            log.info("parameter in List is {},,,, first check {} , second check {} ", responseParameter.externalKey(), apiResponse.has(responseParameter.externalKey()) && !apiResponse.isNull(responseParameter.externalKey()) && !responseParameter.isResponseParam(), apiResponse.has(responseParameter.externalKey()) && !apiResponse.isNull(responseParameter.externalKey()) && !responseParameter.isResponseParam());
+            // log.info("parameter in List is {},,,, first check {} , second check {} ", responseParameter.externalKey(), apiResponse.has(responseParameter.externalKey()) && !apiResponse.isNull(responseParameter.externalKey()) && !responseParameter.isResponseParam(), apiResponse.has(responseParameter.externalKey()) && !apiResponse.isNull(responseParameter.externalKey()) && !responseParameter.isResponseParam());
             if (apiResponse.has(responseParameter.externalKey()) && !apiResponse.isNull(responseParameter.externalKey()) && !responseParameter.isResponseParam()) {
                 constructResponse(apiResponse, response, responseParameter, billerId, processService.id(), resCode, locale);
             } else if (apiResponse.has(responseParameter.externalKey()) && !apiResponse.isNull(responseParameter.externalKey()) && responseParameter.isResponseParam()) {
@@ -114,10 +114,11 @@ public class Validation {
                                 paymentResponse.setResponseMessage(commonUtils.mapResponseMessage(billerId, apiResponse.getInt(responseParameter.externalKey()), locale));
                                 break;
                         }
-                    }else
-                        log.info("parameter["+responseParameter.externalKey()+"] not a response code from biller");
+                    }
+                    //else
+                        // log.info("parameter["+responseParameter.externalKey()+"] not a response code from biller");
                 }catch (ValidationException e){
-                    log.info(e.getMessage());
+                    // log.info(e.getMessage());
                 }
             } else {
                 notFoundInResponse.append(responseParameter.externalKey()).append(",,,");
@@ -127,11 +128,11 @@ public class Validation {
         }
         if (!notFoundInResponse.isEmpty()) {
 //a.salah            throw new BusinessException(format("Parameters not found in response %s ", notFoundInResponse.toString()));
-            log.error(format("Parameters not found in response %s ", notFoundInResponse.toString()));
+            // log.error(format("Parameters not found in response %s ", notFoundInResponse.toString()));
         }
         paymentResponse.setResponseParams(response);
 
-        log.info("response returned after mapping data is {} ", response);
+        // log.info("response returned after mapping data is {} ", response);
         return paymentResponse;
     }
 

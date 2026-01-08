@@ -216,3 +216,11 @@ Configuration: `src/main/resources/logback-spring.xml`
 - `src/main/resources/logback-spring.xml` - Logging configuration
 - `pom.xml` - Maven dependencies and build configuration
 - `docker-compose.yml` - SonarQube + PostgreSQL setup
+
+### how to do changes in code
+- any 'change request' will be proccessed in 'task'
+- 'task' name will be choosen automaticly unless it's provided in the 'change request'.
+- any task should have it's folder with task name inside ./__Claude_tasks.
+- first full plan will be created in plan.md
+- then the plan.md will be updated by done steps
+- any needed test files for specific task that not part of the main code will be created in the task folder.

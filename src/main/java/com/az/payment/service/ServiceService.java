@@ -27,7 +27,7 @@ public class ServiceService {
 
     public List<ServiceResponse> findAll() {
 
-        log.info("ServiceService.findAll  return all Active Services");
+        // log.info("ServiceService.findAll  return all Active Services");
         return repository
                 .findAll()
                 .stream()
@@ -37,7 +37,7 @@ public class ServiceService {
     }
 
     public List<ServiceResponse> findAllInActive() {
-        log.info("ServiceService.findAllInActive return all Inactive Services");
+        // log.info("ServiceService.findAllInActive return all Inactive Services");
         return repository
                 .findAll()
                 .stream()
@@ -47,7 +47,7 @@ public class ServiceService {
     }
 
     public ServiceResponse findById(long serviceId) {
-        log.info("ServiceService.findById  return service with id {}", serviceId);
+        // log.info("ServiceService.findById  return service with id {}", serviceId);
 
         return repository.findById(serviceId)
                 .map(mapper::toServiceResponse)
@@ -55,17 +55,17 @@ public class ServiceService {
     }
 
     public ServiceResponse createService(ServiceRequest request) {
-        log.info("ServiceService.createService request : {}", request);
+        // log.info("ServiceService.createService request : {}", request);
         var optionalService = repository.findByName(request.name());
         if (optionalService.isPresent())
             throw new RuntimeException("Service already exists");
         var service = mapper.toService(request);
-        log.info("ServiceService.createService mapped request to  service to be created  : {}", service);
+        // log.info("ServiceService.createService mapped request to  service to be created  : {}", service);
         return mapper.toServiceResponse(repository.save(service));
     }
 
     public ServiceResponse toggleStatus(long serviceId) {
-        log.info("ServiceService.toggleStatus request : {}", serviceId);
+        // log.info("ServiceService.toggleStatus request : {}", serviceId);
         var optionalService = repository.findById(serviceId);
         if (optionalService.isEmpty())
             throw new RuntimeException("Service does not exist");
@@ -75,14 +75,14 @@ public class ServiceService {
     }
 
     public Long deleteService(long serviceId) {
-        log.info("ServiceService.deleteService request To delete Service With Id : {}", serviceId);
+        // log.info("ServiceService.deleteService request To delete Service With Id : {}", serviceId);
         var optionalService = repository.findById(serviceId);
         if (optionalService.isEmpty())
             throw new RuntimeException("Service does not exist");
         var service = optionalService.get();
-        log.info("ServiceService.deleteService service to be deleted  : {}", service);
+        // log.info("ServiceService.deleteService service to be deleted  : {}", service);
         repository.delete(service);
-        log.info("ServiceService.deleteService service deleted  with Id : {}", service.getId());
+        // log.info("ServiceService.deleteService service deleted  with Id : {}", service.getId());
         return service.getId();
     }
 
@@ -93,18 +93,18 @@ public class ServiceService {
 
     public List<ParameterResponse> findParameterByServiceId(Long serviceId,String lang) {
 
-        log.info("ServiceService.findParameterByServiceId  ServiceID : {}", serviceId);
+        // log.info("ServiceService.findParameterByServiceId  ServiceID : {}", serviceId);
         return repository.findById(serviceId)
                 .orElseThrow(() -> new EntityNotFoundException(format("Service Not found By Id %d", serviceId)))
                 .getParameters()
                 .stream().
                 filter(parameter -> {
 
-                    log.info("inside stream getting parameterId={} and !isGen={} and notBoth={} and !isFix={}",
-                            parameter.getId(),
-                            !parameter.isGeneratedTransactionId()
-                            , (parameter.getParamType() == 1 || parameter.getParamType() == 2), parameter.getIsFixed() != 1
-                    );
+                    // log.info("inside stream getting parameterId={} and !isGen={} and notBoth={} and !isFix={}",
+//                            parameter.getId(),
+//                            !parameter.isGeneratedTransactionId()
+//                            , (parameter.getParamType() == 1 || parameter.getParamType() == 2), parameter.getIsFixed() != 1
+//                    );
                     return !parameter.isGeneratedTransactionId()
                             && (parameter.getParamType() == 1 || parameter.getParamType() == 3)
                             && parameter.getIsFixed() != 1
@@ -115,7 +115,7 @@ public class ServiceService {
 
     public List<InParameterResponse> findResponseParameterByServiceId(Long serviceId) {
 
-        log.info("ServiceService.findResponseParameterByServiceId  ServiceID : {}", serviceId);
+        // log.info("ServiceService.findResponseParameterByServiceId  ServiceID : {}", serviceId);
         return repository.findById(serviceId)
                 .orElseThrow(() -> new EntityNotFoundException(format("Service Not found By Id %d", serviceId)))
                 .getParameters()

@@ -43,6 +43,9 @@ public class ClientApi {
     private final ServiceUtils serviceUtils;
     private final BillerUtils billerUtils;
 
+    private final com.az.payment.config.logging.RestTemplateLoggingInterceptor loggingInterceptor;
+    private final com.az.payment.config.logging.LoggingContext loggingContext;
+
     public JSONObject callService(JSONObject mappedRequest, ServiceResponse processService, long billerId) {
         // should check if request is GET or POST first
         try {
@@ -58,13 +61,15 @@ public class ClientApi {
             var biller = repository.findById(billerId);
             if (biller.isEmpty())
                 throw new BusinessException(String.format("Biller WIth ID Does not exists %d", billerId));
+            // Set biller name in MDC for logging context
+            loggingContext.setBillerName(biller.get().getName());
             String requestURI = biller.get().getBaseUrl() + service.get().getServicePath();
 
             RestTemplate template = restTemplate(connectionTimeout,readTimeout);
 
             var response = template.exchange(requestURI , HttpMethod.POST, request, String.class);
 
-            log.info("ClientAPi::CallService response: {}", response.getBody());
+            // log.info("ClientAPi::CallService response: {}", response.getBody());
             if (response.getStatusCode().is2xxSuccessful() && response.getBody() != null && !response.getBody().isEmpty()) {
                 return new JSONObject(response.getBody());
             }
@@ -108,7 +113,7 @@ public class ClientApi {
         exceptionResponse.put("status", status);
         exceptionResponse.put("code", code);
         exceptionResponse.put("message", message);
-        log.error(message);
+        // log.error(message);
         return exceptionResponse;
     }
 
@@ -149,6 +154,7 @@ public class ClientApi {
         return new RestTemplateBuilder()
                 .setConnectTimeout(Duration.ofSeconds(connectTimeout))// Timeout to establish connection
                 .setReadTimeout(Duration.ofSeconds(readTimeout))// Timeout waiting for data
+                .interceptors(loggingInterceptor)  // Add logging interceptor
                 .build();
     }
 }

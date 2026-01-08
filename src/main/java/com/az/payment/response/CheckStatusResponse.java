@@ -18,9 +18,9 @@ author a.salah
 @ToString
 public class CheckStatusResponse {
 
-    private long responseCode;
+    private int responseCode;
     private String responseMessage;
-    private String trnStatus;
+    private int trnStatus;
     private String trnStatusDisc;
     private String transactionId;
     private String checkReqId;

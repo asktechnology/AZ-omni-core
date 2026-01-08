@@ -1,10 +1,9 @@
 package com.az.payment.domain;
 
-// 0 must have 1 as after service
 public enum ServiceType {
-    INQUIRY,
-    PAYMENT,
-    BOTH,
+    INQUIRY,//no payment. TODO: should doesn't allow next step
+    PAYMENT,//next step must only be CHECKSTATUS
+    BOTH,//allow next step
     CHECKSTATUS,
     DATASOURCE
 }

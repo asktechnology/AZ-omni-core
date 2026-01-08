@@ -38,6 +38,7 @@ public class Service {
     List<Biller> billers = new ArrayList<>();
     // add service parameters
     @ManyToMany(fetch = FetchType.EAGER)
+    @OrderBy("orderNo ASC")
     @JoinTable(name = "Service_Parameter", joinColumns = {@JoinColumn(name = "parameterId")}, inverseJoinColumns = {
             @JoinColumn(name = "serviceId")})
     List<Parameter> parameters = new ArrayList<>();

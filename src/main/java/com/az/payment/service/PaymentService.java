@@ -959,13 +959,13 @@ public class PaymentService {
                 String trnStatusExKey = checkService.getParameters().stream().filter(parameter -> "trnStatus".equals(parameter.getInternalKey())).findFirst().get().getExternalKey();
                 String trnStatus = response.has(trnStatusExKey)? String.valueOf(response.get(trnStatusExKey)):null;
 
-//                String trnStatusDiscExKey = checkService.getParameters().stream().filter(parameter -> "trnStatusDisc".equals(parameter.getInternalKey())).findFirst().get().getExternalKey();
-//                String trnStatusDisc = response.has(trnStatusExKey)? (String) response.get(trnStatusDiscExKey):null;
+//              String trnStatusDiscExKey = checkService.getParameters().stream().filter(parameter -> "trnStatusDisc".equals(parameter.getInternalKey())).findFirst().get().getExternalKey();
+//              String trnStatusDisc = response.has(trnStatusExKey)? (String) response.get(trnStatusDiscExKey):null;
 
                 String trnStatusDisc = trnStatus == null?"":commonUtils.mapResponseMessage(transactionLog.getBillerId(), Integer.parseInt(trnStatus), locale);
 
-                trnStatus = trnStatus == null?null:String.valueOf(commonUtils.mapResponseCode(transactionLog.getBillerId(), Integer.parseInt(trnStatus)));
-//                trnStatus = trnStatus == null?null:(trnStatus.equals(billerSuccessCode)?"0":(trnStatus.equals(billerTimeoutCode)?"20":"10"));
+                int trnStatusInt = trnStatus == null?20:commonUtils.mapResponseCode(transactionLog.getBillerId(), Integer.parseInt(trnStatus));//default to timeout in unkown case
+//              trnStatus = trnStatus == null?null:(trnStatus.equals(billerSuccessCode)?"0":(trnStatus.equals(billerTimeoutCode)?"20":"10"));
 
                 //TODO: the returning codes 0,10,20 are hardcoded but should be configured in DB or config file
                 //if timeout(biller didn't response)
@@ -977,7 +977,7 @@ public class PaymentService {
                 else if(billerResCode.equals(billerTimeoutCode)){
                     checkStatusResponse.setResponseMessage(billerResCodeKey.equals(trnStatusExKey)?"Success":"Biller returned with timeout");
                     checkStatusResponse.setResponseCode(0);
-                    checkStatusResponse.setTrnStatus(trnStatus);
+                    checkStatusResponse.setTrnStatus(trnStatusInt);
                     checkStatusResponse.setTrnStatusDisc(trnStatusDisc);
                     List<PaymentResponseField> trnDetails = responseMapper.toServiceResponse(response, processService, billerId,locale).getResponseParams();
                     log.info("PaymentService::checkStatus  Response returned From restApi {}", response);
@@ -994,7 +994,7 @@ public class PaymentService {
                     if(billerResCodeKey.equals(trnStatusExKey)){
                         checkStatusResponse.setResponseCode(0);
                         checkStatusResponse.setResponseMessage("Success");
-                        checkStatusResponse.setTrnStatus(trnStatus);
+                        checkStatusResponse.setTrnStatus(trnStatusInt);
                         checkStatusResponse.setTrnStatusDisc(trnStatusDisc);
                         List<PaymentResponseField> trnDetails = responseMapper.toServiceResponse(response, processService, billerId,locale).getResponseParams();
                         log.info("PaymentService::checkStatus  Response returned From restApi {}", response);
@@ -1009,7 +1009,7 @@ public class PaymentService {
                 else{
                     checkStatusResponse.setResponseCode(0);
                     checkStatusResponse.setResponseMessage("Success");
-                    checkStatusResponse.setTrnStatus(trnStatus);
+                    checkStatusResponse.setTrnStatus(trnStatusInt);
                     checkStatusResponse.setTrnStatusDisc(trnStatusDisc);
                     List<PaymentResponseField> trnDetails = responseMapper.toServiceResponse(response, processService, billerId,locale).getResponseParams();
                     log.info("PaymentService::checkStatus  Response returned From restApi {}", response);
@@ -1017,6 +1017,7 @@ public class PaymentService {
                     checkStatusResponse.setTrnDetails(trnDetails);
                 }
 
+                log.info(checkStatusResponse.toString());
                 return checkStatusResponse;
             }else{
                 log.info("check Status service not configured "+request);

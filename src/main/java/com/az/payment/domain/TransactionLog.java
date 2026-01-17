@@ -3,6 +3,8 @@ package com.az.payment.domain;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,6 +48,8 @@ public class TransactionLog {
     private String request;
     @Column(length = 2000)
     private String response;
+    @Column(name = "TIMESTAMP", insertable = false, updatable = false)
+    private LocalDateTime logTimestamp;
 
     @OneToMany(mappedBy = "transactionLog", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference

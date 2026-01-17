@@ -192,7 +192,21 @@ public class PaymentService {
             //check if biller dosn't return the expected response body
             boolean htmlerr=false;
             if(response.has(billerResCodeKey)){//normal reponse body
-                billerResCode = String.valueOf(response.getInt(billerResCodeKey));
+                billerResCode = String.valueOf(response.get(billerResCodeKey));
+                /*
+                switch (responseParameter.parameterDataType()) {
+                            case STRING:
+                                // should add this as method in responseService as to create a redis-cache store rather than use database always with everyRequest
+                                paymentResponse.setResponseCode(commonUtils.mapResponseCode(billerId, Integer.parseInt(apiResponse.getString(responseParameter.externalKey()))));
+                                paymentResponse.setResponseMessage(commonUtils.mapResponseMessage(billerId, Integer.parseInt(apiResponse.getString(responseParameter.externalKey())), locale));
+                                break;
+                            case INT:
+                            default:
+                                paymentResponse.setResponseCode(commonUtils.mapResponseCode(billerId, apiResponse.getInt(responseParameter.externalKey())));
+                                paymentResponse.setResponseMessage(commonUtils.mapResponseMessage(billerId, apiResponse.getInt(responseParameter.externalKey()), locale));
+                                break;
+                        }
+                 */
             }
             else if(response.has("code")) {//invalid reponse body
                 // log.info("================================="+response.getInt("code"));
@@ -973,7 +987,7 @@ public class PaymentService {
 //              trnStatus = trnStatus == null?null:(trnStatus.equals(billerSuccessCode)?"0":(trnStatus.equals(billerTimeoutCode)?"20":"10"));
 
                 //TODO: the returning codes 0,10,20 are hardcoded but should be configured in DB or config file
-                //if timeout(biller didn't response)
+                //if timeout(biller didn't response)            i
                 if(finalStatus.equals("-2")){
                     checkStatusResponse.setResponseCode(20);
                     checkStatusResponse.setResponseMessage("Biller not responding");

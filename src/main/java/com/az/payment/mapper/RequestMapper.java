@@ -217,7 +217,11 @@ public class RequestMapper {
         // log.info("start toClientResponse .... {},,,,, with request ............{} ", response, request);
         // get service by Service ID
         var service = serviceRepository.findById(request.getServiceId());
-        List<Long> ids = request.getParameters().stream().map(RequestParameter::id).toList();
+
+        //get the previous service parameters(either IN or OUT) to execlude them from required parameters
+        // cause the thired party(mobile) will send them automaticaly
+        List<Long> ids = service.get().getParameters().stream().map(Parameter::getId).toList();
+        //List<Long> ids = request.getParameters().stream().map(RequestParameter::id).toList();
 
         if (service.isEmpty())
             return response;
@@ -228,7 +232,10 @@ public class RequestMapper {
                 response.setFinalStatus(nextServiceId);
                 var nextService = serviceRepository.findById(nextServiceId).orElseThrow(() -> new BusinessException("Service not found"));
                 response.setRequestParams(serviceService.findParameterByServiceId(nextServiceId,locale)
-                        .stream().filter(param -> !ids.contains(param.id())).toList());
+                        .stream()
+                        .filter(param -> !ids.contains(param.id()))
+                        //.filter(param -> !service.get().getParameters().stream().map(Parameter::getId).toList().contains(param.id()))
+                        .toList());
                 response.setPayment(nextService.isPayment());
             } else if (service.get().getAfterServiceId() == 0 && service.get().isPayment()) {
                 response.setFinalStatus(0);

@@ -395,7 +395,7 @@ public class PaymentService {
 
         StoredProcedureQuery query = entityManager.createStoredProcedureQuery("processhbimdwbillpay_Fees_2025");
         Map<Long, String> paramMap = request.getParameters().stream()
-                .collect(Collectors.toMap(RequestParameter::id, RequestParameter::value));
+                .collect(Collectors.toMap(RequestParameter::id, RequestParameter::value,(oldValue, newValue) -> newValue));
 
         List<Parameter> parameters = serviceRepository.findById(request.getServiceId()).get().getParameters();
         //get the id of the parameter where parameter.getIsAmount()==1

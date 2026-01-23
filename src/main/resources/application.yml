@@ -36,7 +36,7 @@ server:
 timeout:
   biller:
     connection: 15 #sec
-    read: 1 #sec
+    read: 10 #sec
 
     
     
